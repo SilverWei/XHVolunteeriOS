@@ -53,7 +53,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
     @IBAction func ActivityMenu(sender: UIButton) {
         var actionSheet = UIActionSheet()
         actionSheet.addButtonWithTitle("取消")
-        if(Identity == UserIdentity.MemberView)
+        if(Identity == UserIdentity.TeacherView)
         {
             actionSheet.addButtonWithTitle("生成二维码")
             actionSheet.addButtonWithTitle("结束活动")
@@ -107,4 +107,6 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
             (segue.destinationViewController as QRcodeShowViewController).IndexName = ActivityDetail.ActivityName
         }
     }
+
+
 }

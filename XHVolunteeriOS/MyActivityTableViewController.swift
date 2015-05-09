@@ -51,6 +51,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
         tableFooterView.addSubview(loadMoreText)
         self.tableView.tableFooterView = tableFooterView
     }
+    
     override func scrollViewDidScroll(scrollView: UIScrollView){//开始上拉到特定位置后改变列表底部的提示
         
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 30){
@@ -173,7 +174,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
     
     //页面对外接口
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowActivity" //进入数据详情页面 ShowActivity为storyboard的ldentifier标示
+        if segue.identifier == "ShowActivityDetail" //进入数据详情页面 ShowActivity为storyboard的ldentifier标示
         {
             println("显示详情")
             

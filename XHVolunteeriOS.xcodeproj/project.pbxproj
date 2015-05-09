@@ -12,12 +12,17 @@
 		782195971AE2463A0018AC26 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782195961AE2463A0018AC26 /* LoginViewController.swift */; };
 		782195E51AE24AC80018AC26 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782195E41AE24AC80018AC26 /* SwiftyJSON.swift */; };
 		78433E0D1AE4E86100D2E72F /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78433E0C1AE4E86100D2E72F /* MainTabBarViewController.swift */; };
+		785104E71AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785104E61AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift */; };
 		7884EB841ADBA02500CC97F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884EB831ADBA02500CC97F0 /* AppDelegate.swift */; };
 		7884EB861ADBA02500CC97F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884EB851ADBA02500CC97F0 /* ViewController.swift */; };
 		7884EB8B1ADBA02500CC97F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7884EB8A1ADBA02500CC97F0 /* Images.xcassets */; };
 		7884EB8E1ADBA02500CC97F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7884EB8C1ADBA02500CC97F0 /* LaunchScreen.xib */; };
 		7884EB9A1ADBA02500CC97F0 /* XHVolunteeriOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884EB991ADBA02500CC97F0 /* XHVolunteeriOSTests.swift */; };
 		7884EBA51ADBC54D00CC97F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7884EBA31ADBC54D00CC97F0 /* Main.storyboard */; };
+		78C37EC81AFAF69600C59556 /* PersonalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C37EC71AFAF69600C59556 /* PersonalInformationTableViewController.swift */; };
+		78C37ECA1AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C37EC91AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift */; };
+		78C37ECE1AFB4AC900C59556 /* GetTeacherPerImfor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C37ECD1AFB4AC900C59556 /* GetTeacherPerImfor.swift */; };
+		78C37ED01AFB4C3A00C59556 /* EditTeaPerImfor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C37ECF1AFB4C3A00C59556 /* EditTeaPerImfor.swift */; };
 		78CC75A21ADE10A200CFC2CB /* IActivityReposity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CC75A11ADE10A200CFC2CB /* IActivityReposity.swift */; };
 		78CC75A41ADE4FA800CFC2CB /* IUserReposity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CC75A31ADE4FA800CFC2CB /* IUserReposity.swift */; };
 		78CC75A61ADE552500CFC2CB /* EditUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CC75A51ADE552500CFC2CB /* EditUserInfo.swift */; };
@@ -62,6 +67,7 @@
 		782195961AE2463A0018AC26 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		782195E41AE24AC80018AC26 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
 		78433E0C1AE4E86100D2E72F /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		785104E61AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherMainActivityTableViewController.swift; sourceTree = "<group>"; };
 		7884EB7E1ADBA02500CC97F0 /* XHVolunteeriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHVolunteeriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7884EB821ADBA02500CC97F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7884EB831ADBA02500CC97F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +78,10 @@
 		7884EB981ADBA02500CC97F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7884EB991ADBA02500CC97F0 /* XHVolunteeriOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHVolunteeriOSTests.swift; sourceTree = "<group>"; };
 		7884EBA41ADBC54D00CC97F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78C37EC71AFAF69600C59556 /* PersonalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInformationTableViewController.swift; sourceTree = "<group>"; };
+		78C37EC91AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPersonalInformationTableViewController.swift; sourceTree = "<group>"; };
+		78C37ECD1AFB4AC900C59556 /* GetTeacherPerImfor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTeacherPerImfor.swift; sourceTree = "<group>"; };
+		78C37ECF1AFB4C3A00C59556 /* EditTeaPerImfor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTeaPerImfor.swift; sourceTree = "<group>"; };
 		78CC75A11ADE10A200CFC2CB /* IActivityReposity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IActivityReposity.swift; sourceTree = "<group>"; };
 		78CC75A31ADE4FA800CFC2CB /* IUserReposity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IUserReposity.swift; sourceTree = "<group>"; };
 		78CC75A51ADE552500CFC2CB /* EditUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserInfo.swift; sourceTree = "<group>"; };
@@ -202,12 +212,9 @@
 				78433E0C1AE4E86100D2E72F /* MainTabBarViewController.swift */,
 				78F663E61AEF9211004B12C1 /* QRcodeShowViewController.swift */,
 				7805AC051AF8525E00E9076D /* PageContentViewController.swift */,
-<<<<<<< HEAD
 				785104E61AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift */,
 				78C37EC71AFAF69600C59556 /* PersonalInformationTableViewController.swift */,
 				78C37EC91AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift */,
-=======
->>>>>>> origin/Main
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -238,6 +245,8 @@
 				78F663DC1AEE2021004B12C1 /* ActivityDetailCell.swift */,
 				78F663DE1AEF0DF1004B12C1 /* GetUserCell.swift */,
 				78F663E01AEF1883004B12C1 /* EditUserCell.swift */,
+				78C37ECD1AFB4AC900C59556 /* GetTeacherPerImfor.swift */,
+				78C37ECF1AFB4C3A00C59556 /* EditTeaPerImfor.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -352,13 +361,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				78CC75AE1ADE6A6500CFC2CB /* ScanCode.swift in Sources */,
+				785104E71AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift in Sources */,
 				78DEC8501ADCBA9300AC1846 /* RecruitActivityTableViewController.swift in Sources */,
 				7884EB861ADBA02500CC97F0 /* ViewController.swift in Sources */,
 				78433E0D1AE4E86100D2E72F /* MainTabBarViewController.swift in Sources */,
 				78D8BAB41AE742D600CBBA9A /* PtrRequest.swift in Sources */,
 				78DEC85D1ADCEF4A00AC1846 /* SettingEditTableViewController.swift in Sources */,
+				78C37ECE1AFB4AC900C59556 /* GetTeacherPerImfor.swift in Sources */,
 				78DEC8561ADCBF8F00AC1846 /* MyActivityTableViewController.swift in Sources */,
 				78DEC8521ADCBB5100AC1846 /* QRcodeViewController.swift in Sources */,
+				78C37ED01AFB4C3A00C59556 /* EditTeaPerImfor.swift in Sources */,
 				78D8BAB81AE75F8B00CBBA9A /* UpdateType.swift in Sources */,
 				782195951AE2462E0018AC26 /* UserReposity.swift in Sources */,
 				78DEC85B1ADCEEB200AC1846 /* ActivityDetailTableViewController.swift in Sources */,
@@ -376,11 +388,13 @@
 				78DEC8541ADCBC7C00AC1846 /* SettingTableViewController.swift in Sources */,
 				78F663E71AEF9211004B12C1 /* QRcodeShowViewController.swift in Sources */,
 				78CC75A61ADE552500CFC2CB /* EditUserInfo.swift in Sources */,
+				78C37ECA1AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift in Sources */,
 				78CC75A41ADE4FA800CFC2CB /* IUserReposity.swift in Sources */,
 				78F663DF1AEF0DF1004B12C1 /* GetUserCell.swift in Sources */,
 				7805AC061AF8525E00E9076D /* PageContentViewController.swift in Sources */,
 				78CC75A21ADE10A200CFC2CB /* IActivityReposity.swift in Sources */,
 				78F0E95F1AE1108300562E8D /* ActivityReposity.swift in Sources */,
+				78C37EC81AFAF69600C59556 /* PersonalInformationTableViewController.swift in Sources */,
 				78D8BABA1AE7604900CBBA9A /* PtrUpdateData.swift in Sources */,
 				78CC75AC1ADE640A00CFC2CB /* PullDown.swift in Sources */,
 				78CC75A81ADE563500CFC2CB /* GetUserInfo.swift in Sources */,
