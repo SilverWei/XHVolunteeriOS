@@ -19,6 +19,13 @@
 		7884EB8E1ADBA02500CC97F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7884EB8C1ADBA02500CC97F0 /* LaunchScreen.xib */; };
 		7884EB9A1ADBA02500CC97F0 /* XHVolunteeriOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884EB991ADBA02500CC97F0 /* XHVolunteeriOSTests.swift */; };
 		7884EBA51ADBC54D00CC97F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7884EBA31ADBC54D00CC97F0 /* Main.storyboard */; };
+		78BD816E1B00321000E4C4DE /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD81671B00321000E4C4DE /* MKButton.swift */; };
+		78BD816F1B00321000E4C4DE /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD81681B00321000E4C4DE /* MKColor.swift */; };
+		78BD81701B00321000E4C4DE /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD81691B00321000E4C4DE /* MKImageView.swift */; };
+		78BD81711B00321000E4C4DE /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD816A1B00321000E4C4DE /* MKLabel.swift */; };
+		78BD81721B00321000E4C4DE /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD816B1B00321000E4C4DE /* MKLayer.swift */; };
+		78BD81731B00321000E4C4DE /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD816C1B00321000E4C4DE /* MKTableViewCell.swift */; };
+		78BD81741B00321000E4C4DE /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD816D1B00321000E4C4DE /* MKTextField.swift */; };
 		78C37EC81AFAF69600C59556 /* PersonalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C37EC71AFAF69600C59556 /* PersonalInformationTableViewController.swift */; };
 		78C37ECA1AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C37EC91AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift */; };
 		78C37ECE1AFB4AC900C59556 /* GetTeacherPerImfor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C37ECD1AFB4AC900C59556 /* GetTeacherPerImfor.swift */; };
@@ -78,6 +85,13 @@
 		7884EB981ADBA02500CC97F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7884EB991ADBA02500CC97F0 /* XHVolunteeriOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHVolunteeriOSTests.swift; sourceTree = "<group>"; };
 		7884EBA41ADBC54D00CC97F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78BD81671B00321000E4C4DE /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
+		78BD81681B00321000E4C4DE /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
+		78BD81691B00321000E4C4DE /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKImageView.swift; sourceTree = "<group>"; };
+		78BD816A1B00321000E4C4DE /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
+		78BD816B1B00321000E4C4DE /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
+		78BD816C1B00321000E4C4DE /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTableViewCell.swift; sourceTree = "<group>"; };
+		78BD816D1B00321000E4C4DE /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
 		78C37EC71AFAF69600C59556 /* PersonalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInformationTableViewController.swift; sourceTree = "<group>"; };
 		78C37EC91AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPersonalInformationTableViewController.swift; sourceTree = "<group>"; };
 		78C37ECD1AFB4AC900C59556 /* GetTeacherPerImfor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTeacherPerImfor.swift; sourceTree = "<group>"; };
@@ -131,6 +145,7 @@
 		7884EB751ADBA02400CC97F0 = {
 			isa = PBXGroup;
 			children = (
+				78BD81621B0030F400E4C4DE /* MaterialKit */,
 				78F0E95D1AE1104400562E8D /* NetMethod */,
 				78CC75A01ADE0C5400CFC2CB /* Protocal */,
 				78DEC8581ADCEDDB00AC1846 /* Model */,
@@ -188,6 +203,20 @@
 				7884EB981ADBA02500CC97F0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78BD81621B0030F400E4C4DE /* MaterialKit */ = {
+			isa = PBXGroup;
+			children = (
+				78BD81671B00321000E4C4DE /* MKButton.swift */,
+				78BD81681B00321000E4C4DE /* MKColor.swift */,
+				78BD81691B00321000E4C4DE /* MKImageView.swift */,
+				78BD816A1B00321000E4C4DE /* MKLabel.swift */,
+				78BD816B1B00321000E4C4DE /* MKLayer.swift */,
+				78BD816C1B00321000E4C4DE /* MKTableViewCell.swift */,
+				78BD816D1B00321000E4C4DE /* MKTextField.swift */,
+			);
+			name = MaterialKit;
 			sourceTree = "<group>";
 		};
 		78CC75A01ADE0C5400CFC2CB /* Protocal */ = {
@@ -363,11 +392,14 @@
 				78CC75AE1ADE6A6500CFC2CB /* ScanCode.swift in Sources */,
 				785104E71AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift in Sources */,
 				78DEC8501ADCBA9300AC1846 /* RecruitActivityTableViewController.swift in Sources */,
+				78BD81701B00321000E4C4DE /* MKImageView.swift in Sources */,
 				7884EB861ADBA02500CC97F0 /* ViewController.swift in Sources */,
 				78433E0D1AE4E86100D2E72F /* MainTabBarViewController.swift in Sources */,
+				78BD81711B00321000E4C4DE /* MKLabel.swift in Sources */,
 				78D8BAB41AE742D600CBBA9A /* PtrRequest.swift in Sources */,
 				78DEC85D1ADCEF4A00AC1846 /* SettingEditTableViewController.swift in Sources */,
 				78C37ECE1AFB4AC900C59556 /* GetTeacherPerImfor.swift in Sources */,
+				78BD81721B00321000E4C4DE /* MKLayer.swift in Sources */,
 				78DEC8561ADCBF8F00AC1846 /* MyActivityTableViewController.swift in Sources */,
 				78DEC8521ADCBB5100AC1846 /* QRcodeViewController.swift in Sources */,
 				78C37ED01AFB4C3A00C59556 /* EditTeaPerImfor.swift in Sources */,
@@ -380,8 +412,11 @@
 				78D8BAB61AE75EC300CBBA9A /* PtrResponse.swift in Sources */,
 				78CC75AA1ADE5B3100CFC2CB /* Login.swift in Sources */,
 				78DEC85F1ADD0BBD00AC1846 /* ActivityInfo.swift in Sources */,
+				78BD81731B00321000E4C4DE /* MKTableViewCell.swift in Sources */,
 				7884EB841ADBA02500CC97F0 /* AppDelegate.swift in Sources */,
+				78BD816E1B00321000E4C4DE /* MKButton.swift in Sources */,
 				78F663E31AEF7987004B12C1 /* UserIdentity.swift in Sources */,
+				78BD816F1B00321000E4C4DE /* MKColor.swift in Sources */,
 				782195E51AE24AC80018AC26 /* SwiftyJSON.swift in Sources */,
 				78F663DD1AEE2021004B12C1 /* ActivityDetailCell.swift in Sources */,
 				78F663E11AEF1883004B12C1 /* EditUserCell.swift in Sources */,
@@ -390,6 +425,7 @@
 				78CC75A61ADE552500CFC2CB /* EditUserInfo.swift in Sources */,
 				78C37ECA1AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift in Sources */,
 				78CC75A41ADE4FA800CFC2CB /* IUserReposity.swift in Sources */,
+				78BD81741B00321000E4C4DE /* MKTextField.swift in Sources */,
 				78F663DF1AEF0DF1004B12C1 /* GetUserCell.swift in Sources */,
 				7805AC061AF8525E00E9076D /* PageContentViewController.swift in Sources */,
 				78CC75A21ADE10A200CFC2CB /* IActivityReposity.swift in Sources */,

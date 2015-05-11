@@ -34,10 +34,8 @@ class PersonalInformationTableViewController: UITableViewController {
     
     @IBAction func savePerImfoEdit(segue:UIStoryboardSegue)
     {
-        println("修改完成1")
         let EditPerImfoController = segue.sourceViewController as EditPersonalInformationTableViewController
         
-        println("修改完成12")
         let cell = EditPerImfoController.tableView.self as EditTeaPerImfor
         EditUser(性别: cell.SexSegmentedControl.selectedSegmentIndex == 0 ? true : false, 联系方式: cell.PhoneNumberTextField.text, QQ号: cell.QQNumberTextField.text, 个人简介: "")
         
@@ -46,6 +44,17 @@ class PersonalInformationTableViewController: UITableViewController {
         
     }
     
-    
+    //页面对外接口
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PersonalLoginOut" //进入数据详情页面 ShowActivity为storyboard的ldentifier标示
+        {
+            //设置存储信息
+            NSUserDefaults.standardUserDefaults().setObject("", forKey: "UserNameKey")
+            NSUserDefaults.standardUserDefaults().setObject("", forKey: "PwdKey")
+            
+            //设置同步
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
 
 }
