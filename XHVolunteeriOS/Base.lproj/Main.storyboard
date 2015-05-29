@@ -1672,7 +1672,7 @@
         <image name="setting" width="19" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="zWP-aT-ciX"/>
         <segue reference="UEa-ga-Mu4"/>
-        <segue reference="WZc-eS-g75"/>
     </inferredMetricsTieBreakers>
 </document>

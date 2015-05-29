@@ -134,7 +134,13 @@ class RecruitActivityTableViewController: UITableViewController,UIScrollViewDele
         return cell
     }
     
-    //日期格式转化
+    /**
+    日期格式转化
+    
+    :param: DateTime 传入日期
+    
+    :returns: 输出正常日期格式
+    */
     func DateTimeChange(DateTime: String) -> String
     {
         return (DateTime as NSString).substringToIndex(10) + " " + ((DateTime as NSString).substringFromIndex(11) as NSString).substringToIndex(5)
