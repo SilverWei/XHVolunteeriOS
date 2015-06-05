@@ -11,6 +11,8 @@ import AVFoundation
 
 class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
 
+    @IBOutlet weak var messageLabel: UILabel!
+    
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
@@ -46,6 +48,13 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         
         captureSession?.startRunning()
         
+        view.bringSubviewToFront(messageLabel)
+        
+        qrCodeFrameView = UIView()
+        qrCodeFrameView?.layer.borderColor = UIColor.greenColor().CGColor
+        qrCodeFrameView?.layer.borderWidth = 2
+        view.addSubview(qrCodeFrameView!)
+        view.bringSubviewToFront(qrCodeFrameView!)
     }
 
     override func didReceiveMemoryWarning() {
