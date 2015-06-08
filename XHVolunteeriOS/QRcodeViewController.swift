@@ -62,6 +62,28 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         // Dispose of any resources that can be recreated.
     }
     
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+        if metadataObjects == nil || metadataObjects.count == 0
+        {
+            qrCodeFrameView?.frame = CGRectZero
+            messageLabel.text = "No QR code is detected"
+            return
+        }
+        
+        let metadataObj = metadataObjects[0] as AVMetadataMachineReadableCodeObject
+        
+        if metadataObj.type == AVMetadataObjectTypeQRCode
+        {
+            let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObj as AVMetadataMachineReadableCodeObject) as AVMetadataMachineReadableCodeObject
+            qrCodeFrameView?.frame = barCodeObject.bounds
+            
+            if metadataObj.stringValue != nil
+            {
+                messageLabel.text = metadataObj.stringValue
+            }
+        }
+    }
+    
     @IBAction func CloseViewButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
