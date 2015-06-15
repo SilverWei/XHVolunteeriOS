@@ -56,6 +56,7 @@
 		A256AF161B2E9F0200E3D15D /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0F1B2E9F0200E3D15D /* MKLayer.swift */; };
 		A256AF171B2E9F0200E3D15D /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF101B2E9F0200E3D15D /* MKColor.swift */; };
 		A256AF1A1B2EA0DC00E3D15D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF191B2EA0DC00E3D15D /* SwiftyJSON.swift */; };
+		A256AF1C1B2EAA5B00E3D15D /* 12312312321.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF1B1B2EAA5B00E3D15D /* 12312312321.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		A256AF0F1B2E9F0200E3D15D /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = "../../../Downloads/MaterialKit-master/Source/MKLayer.swift"; sourceTree = "<group>"; };
 		A256AF101B2E9F0200E3D15D /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = "../../../Downloads/MaterialKit-master/Source/MKColor.swift"; sourceTree = "<group>"; };
 		A256AF191B2EA0DC00E3D15D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../../Downloads/SwiftyJSON-master/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
+		A256AF1B1B2EAA5B00E3D15D /* 12312312321.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 12312312321.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				7884EB831ADBA02500CC97F0 /* AppDelegate.swift */,
 				7884EB851ADBA02500CC97F0 /* ViewController.swift */,
 				A256AF191B2EA0DC00E3D15D /* SwiftyJSON.swift */,
+				A256AF1B1B2EAA5B00E3D15D /* 12312312321.swift */,
 				7884EB8A1ADBA02500CC97F0 /* Images.xcassets */,
 				7884EBA31ADBC54D00CC97F0 /* Main.storyboard */,
 				7884EB8C1ADBA02500CC97F0 /* LaunchScreen.xib */,
@@ -401,6 +404,7 @@
 				A256AF141B2E9F0200E3D15D /* MKLabel.swift in Sources */,
 				78DEC85D1ADCEF4A00AC1846 /* SettingEditTableViewController.swift in Sources */,
 				78C37ECE1AFB4AC900C59556 /* GetTeacherPerImfor.swift in Sources */,
+				A256AF1C1B2EAA5B00E3D15D /* 12312312321.swift in Sources */,
 				78DEC8561ADCBF8F00AC1846 /* MyActivityTableViewController.swift in Sources */,
 				78DEC8521ADCBB5100AC1846 /* QRcodeViewController.swift in Sources */,
 				78C37ED01AFB4C3A00C59556 /* EditTeaPerImfor.swift in Sources */,
