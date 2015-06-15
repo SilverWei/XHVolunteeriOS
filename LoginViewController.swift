@@ -12,11 +12,11 @@ var Identity:UserIdentity?
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet var UserName: UITextField!
+    @IBOutlet var UserName: MKTextField!
     
-    @IBOutlet var UserPassword: UITextField!
+    @IBOutlet var UserPassword: MKTextField!
     
-    @IBOutlet var LoginButton: UIButton!
+    @IBOutlet var LoginButton: MKButton!
     
     let UserNameKey = ""
     let PwdKey = ""
@@ -25,7 +25,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        LoginButton.layer.shadowOpacity = 0.55
+        LoginButton.layer.shadowRadius = 5.0
+        LoginButton.layer.shadowColor = UIColor.grayColor().CGColor
+        
+        UserName.layer.borderColor = UIColor.clearColor().CGColor
+        UserName.floatingPlaceholderEnabled = true
+        UserName.placeholder = "用户名："
+        UserName.rippleLayerColor = UIColor.MKColor.LightBlue
+        UserName.tintColor = UIColor.MKColor.Blue
+        UserName.backgroundColor = UIColor(hex: 0xE0E0E0)
+        
+        UserPassword.layer.borderColor = UIColor.clearColor().CGColor
+        UserPassword.floatingPlaceholderEnabled = true
+        UserPassword.placeholder = "密码："
+        UserPassword.rippleLayerColor = UIColor.MKColor.LightBlue
+        UserPassword.tintColor = UIColor.MKColor.Blue
+        UserPassword.backgroundColor = UIColor(hex: 0xE0E0E0)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,8 +57,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func LastLogin()
     {
         //读取上次配置
-        self.UserName.text = NSUserDefaults.standardUserDefaults().valueForKey("UserNameKey") as String!
-        self.UserPassword.text = NSUserDefaults.standardUserDefaults().valueForKey("PwdKey") as String!
+        self.UserName.text = NSUserDefaults.standardUserDefaults().valueForKey("UserNameKey") as! String!
+        self.UserPassword.text = NSUserDefaults.standardUserDefaults().valueForKey("PwdKey") as! String!
         
         //判断是否第一次启动：
         if((NSUserDefaults.standardUserDefaults().boolForKey("IsFirstLaunch") as Bool!) == false){
@@ -99,11 +115,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         //收起键盘
         UserName.resignFirstResponder()
         UserPassword.resignFirstResponder()
     }
+
+
     
     /*
     // MARK: - Navigation

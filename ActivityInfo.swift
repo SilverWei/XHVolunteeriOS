@@ -9,21 +9,41 @@
 import Foundation
 
 class ActivityInfos: NSObject {
-    var IndexId:Int //序号
-    var ActivityID:String //活动管理号
+    var IndexId:Int
+    var ActivityID:String
     var ActivityName:String
-    var TeamName:String //组别名称
-    var UserName:String //发布者用户名称
-    var ActivityStartTime:String //活动开始时间
-    var ActivityEndTime:String //活动结束时间
-    var ActivityLocation:String //活动举行地点
-    var ActivitySummary:String //活动简介
-    var ActivityState:String //活动状态
-    var ActivityAttend:Int //参加人数
-    var JoinCount:Int //以报人数
-    var Tick:Int //时间戳
-    var IsJoining:Bool //是否开放
+    var TeamName:String
+    var UserName:String
+    var ActivityStartTime:String
+    var ActivityEndTime:String
+    var ActivityLocation:String
+    var ActivitySummary:String
+    var ActivityState:String
+    var ActivityAttend:Int
+    var JoinCount:Int
+    var Tick:Int
+    var IsJoining:Bool
     
+    /**
+    ActivityInfo
+    
+    :param: IndexId           序号
+    :param: ActivityID        活动管理号
+    :param: ActivityName
+    :param: TeamName          组别名称
+    :param: UserName          发布者用户名称
+    :param: ActivityStartTime 活动开始时间
+    :param: ActivityEndTime   活动结束时间
+    :param: ActivityLocation  活动举行地点
+    :param: ActivitySummary   活动简介
+    :param: ActivityState     活动状态
+    :param: ActivityAttend    参加人数
+    :param: JoinCount         以报人数
+    :param: Tick              时间戳
+    :param: IsJoining         是否开放
+    
+    :returns:
+    */
     init(IndexId:Int, ActivityID:String, ActivityName:String, TeamName:String, UserName:String, ActivityStartTime:String, ActivityEndTime:String, ActivityLocation:String, ActivitySummary:String, ActivityState:String, ActivityAttend:Int, JoinCount:Int, Tick:Int, IsJoining:Bool)
     {
         self.IndexId = IndexId

@@ -126,7 +126,7 @@ class RecruitActivityTableViewController: UITableViewController,UIScrollViewDele
     //每行表格显示数据内容
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let ActivityOneCell = AllActivityDB[indexPath.row] as ActivityDB
-        let cell = tableView.dequeueReusableCellWithIdentifier("RecruitActivityCell", forIndexPath: indexPath) as ActivityCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("RecruitActivityCell", forIndexPath: indexPath) as! ActivityCell
         
         cell.ActivityNameLabel.text = ActivityOneCell.ActivityName
         cell.ActivityStartTimeLabel.text = "开始时间：" + DateTimeChange(ActivityOneCell.ActivityStartTime)
@@ -134,7 +134,13 @@ class RecruitActivityTableViewController: UITableViewController,UIScrollViewDele
         return cell
     }
     
-    //日期格式转化
+    /**
+    日期格式转化
+    
+    :param: DateTime 传入日期
+    
+    :returns: 输出正常日期格式
+    */
     func DateTimeChange(DateTime: String) -> String
     {
         return (DateTime as NSString).substringToIndex(10) + " " + ((DateTime as NSString).substringFromIndex(11) as NSString).substringToIndex(5)
@@ -157,7 +163,7 @@ class RecruitActivityTableViewController: UITableViewController,UIScrollViewDele
             if let indexPath = self.tableView.indexPathForSelectedRow()
             {
                 let ActivityOneCell = AllActivityDB[indexPath.row] as ActivityDB
-                (segue.destinationViewController as ActivityDetailTableViewController).indexId = ActivityOneCell.IndexId
+                (segue.destinationViewController as! ActivityDetailTableViewController).indexId = ActivityOneCell.IndexId
             }
         }
     }

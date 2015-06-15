@@ -24,7 +24,7 @@ class EditPersonalInformationTableViewController: UITableViewController {
     func TeaPerImformationShow()
     {
         var TeaPerImforDetail:InfoOut! = GetUserInfo()
-        let cell = tableView.self as EditTeaPerImfor
+        let cell = tableView.self as! EditTeaPerImfor
         cell.UserNameUILabel.text = TeaPerImforDetail.UserName
         cell.PhoneNumberTextField.text = TeaPerImforDetail.PhoneNumber
         cell.QQNumberTextField.text = TeaPerImforDetail.QQNumber

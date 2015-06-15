@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityCell: UITableViewCell {
+class ActivityCell: MKTableViewCell {
     @IBOutlet var ActivityNameLabel: UILabel!
     @IBOutlet var ActivityStartTimeLabel: UILabel!
     @IBOutlet var ActivityEndTimeLabel:UILabel!

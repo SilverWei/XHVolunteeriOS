@@ -39,6 +39,7 @@ class TeacherMainActivityTableViewController: UITableViewController,UIScrollView
     }
     
     
+    
     //下拉刷新
     func sortArray(){
         AllActivityDB = []
@@ -116,7 +117,7 @@ class TeacherMainActivityTableViewController: UITableViewController,UIScrollView
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let ActivityOneCell = AllActivityDB[indexPath.row] as ActivityDB
-        let cell = tableView.dequeueReusableCellWithIdentifier("AllActivityCell", forIndexPath: indexPath) as ActivityCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("AllActivityCell", forIndexPath: indexPath) as! ActivityCell
         
         cell.ActivityNameLabel.text = ActivityOneCell.ActivityName
         cell.ActivityStartTimeLabel.text = "开始时间：" + DateTimeChange(ActivityOneCell.ActivityStartTime)
@@ -136,7 +137,7 @@ class TeacherMainActivityTableViewController: UITableViewController,UIScrollView
             {
                 let ActivityOneCell = AllActivityDB[index.row] as ActivityDB
                 
-                (segue.destinationViewController as ActivityDetailTableViewController).indexId = ActivityOneCell.IndexId
+                (segue.destinationViewController as! ActivityDetailTableViewController).indexId = ActivityOneCell.IndexId
                 
             }
             

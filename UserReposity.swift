@@ -16,7 +16,7 @@ func UserLogin(用户名 UserName:String, 密码 Password:String) -> PullDownRes
     var pullDownResult = PullDownResult(PtrRequest: ResultType.Error, ErrorMsg: "")
     
 
-    if let url = NSURL(string: urlStr) {
+    if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
         postRequest.timeoutInterval = 5.0
         postRequest.HTTPMethod = "POST"
@@ -54,7 +54,7 @@ func GetUserInfo() -> InfoOut //获取用户信息
     var UserRole:String = ""
     var UserInfo:InfoOut?
     
-    if let url = NSURL(string: urlStr) {
+    if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
         postRequest.timeoutInterval = 5.0
         postRequest.HTTPMethod = "POST"
@@ -87,7 +87,7 @@ func EditUser(性别 Sex:Bool, 联系方式 PhoneNumber:String, QQ号 QQNumber:S
     var UserRole:String = ""
     var UserEdit:EditOut?
     
-    if let url = NSURL(string: urlStr) {
+    if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
         postRequest.timeoutInterval = 5.0
         postRequest.HTTPMethod = "POST"

@@ -28,7 +28,7 @@ class InfoOut: NSObject {
     var ActivityLong:String
     var Sex:Bool
     var Tick:Int
-    
+
     init(UserID:String, UserName:String, UserRole:String, PhoneNumber:String, TeamName:String, QQNumber:String, PersonalInfo:String, ActivityLong:String, Sex:Bool, Tick:Int)
     {
         self.UserID = UserID

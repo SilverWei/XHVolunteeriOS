@@ -51,6 +51,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
         tableFooterView.addSubview(loadMoreText)
         self.tableView.tableFooterView = tableFooterView
     }
+    
     override func scrollViewDidScroll(scrollView: UIScrollView){//开始上拉到特定位置后改变列表底部的提示
         
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 30){
@@ -156,7 +157,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
     //每行表格显示数据内容
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let ActivityOneCell = AllActivityDB[indexPath.row] as ActivityDB
-        let cell = tableView.dequeueReusableCellWithIdentifier("MyActivityCell", forIndexPath: indexPath) as ActivityCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MyActivityCell", forIndexPath: indexPath) as! ActivityCell
         
         cell.ActivityNameLabel.text = ActivityOneCell.ActivityName
         cell.ActivityStartTimeLabel.text = "开始时间：" + DateTimeChange(ActivityOneCell.ActivityStartTime)
@@ -180,7 +181,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
             if let indexPath = self.tableView.indexPathForSelectedRow()
             {
                 let ActivityOneCell = AllActivityDB[indexPath.row] as ActivityDB
-                (segue.destinationViewController as ActivityDetailTableViewController).indexId = ActivityOneCell.IndexId
+                (segue.destinationViewController as! ActivityDetailTableViewController).indexId = ActivityOneCell.IndexId
             }
         }
     }
