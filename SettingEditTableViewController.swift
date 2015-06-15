@@ -26,7 +26,7 @@ class SettingEditTableViewController: UITableViewController {
     func UserDetailShow()
     {
         var UserDetail:InfoOut! = GetUserInfo()
-        let cell = tableView.self as EditUserCell
+        let cell = tableView.self as! EditUserCell
         cell.UserNameUILabel.text = UserDetail.UserName
         cell.PhoneNumberTextField.text = UserDetail.PhoneNumber
         cell.QQNumberTextField.text = UserDetail.QQNumber

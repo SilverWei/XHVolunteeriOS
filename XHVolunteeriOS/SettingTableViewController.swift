@@ -25,7 +25,7 @@ class SettingTableViewController: UITableViewController {
     func UserDetailShow()
     {
         var UserDetail:InfoOut! = GetUserInfo()
-        let cell = tableView.self as GetUserCell
+        let cell = tableView.self as! GetUserCell
         cell.UserNameUILabel.text = UserDetail.UserName
         cell.PhoneNumberUILabel.text = UserDetail.PhoneNumber
         cell.TeamNameUILabel.text = UserDetail.TeamName
@@ -37,8 +37,8 @@ class SettingTableViewController: UITableViewController {
     
     @IBAction func saveUserEditDetail(segue:UIStoryboardSegue)
     {
-        let EditUserController = segue.sourceViewController as SettingEditTableViewController //调用SettingEditTableViewController页面
-        let cell = EditUserController.tableView.self as EditUserCell
+        let EditUserController = segue.sourceViewController as! SettingEditTableViewController //调用SettingEditTableViewController页面
+        let cell = EditUserController.tableView.self as! EditUserCell
         EditUser(性别: cell.SexSegmentedControl.selectedSegmentIndex == 0 ? true : false, 联系方式: cell.PhoneNumberTextField.text, QQ号: cell.QQNumberTextField.text, 个人简介: cell.PersonalInfoTextField.text)
         println("修改完成")
         UserDetailShow()

@@ -10,7 +10,6 @@
 		7805AC061AF8525E00E9076D /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805AC051AF8525E00E9076D /* PageContentViewController.swift */; };
 		782195951AE2462E0018AC26 /* UserReposity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782195941AE2462E0018AC26 /* UserReposity.swift */; };
 		782195971AE2463A0018AC26 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782195961AE2463A0018AC26 /* LoginViewController.swift */; };
-		782195E51AE24AC80018AC26 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782195E41AE24AC80018AC26 /* SwiftyJSON.swift */; };
 		78433E0D1AE4E86100D2E72F /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78433E0C1AE4E86100D2E72F /* MainTabBarViewController.swift */; };
 		785104E71AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785104E61AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift */; };
 		7884EB841ADBA02500CC97F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884EB831ADBA02500CC97F0 /* AppDelegate.swift */; };
@@ -19,13 +18,6 @@
 		7884EB8E1ADBA02500CC97F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7884EB8C1ADBA02500CC97F0 /* LaunchScreen.xib */; };
 		7884EB9A1ADBA02500CC97F0 /* XHVolunteeriOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884EB991ADBA02500CC97F0 /* XHVolunteeriOSTests.swift */; };
 		7884EBA51ADBC54D00CC97F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7884EBA31ADBC54D00CC97F0 /* Main.storyboard */; };
-		78BD816E1B00321000E4C4DE /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD81671B00321000E4C4DE /* MKButton.swift */; };
-		78BD816F1B00321000E4C4DE /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD81681B00321000E4C4DE /* MKColor.swift */; };
-		78BD81701B00321000E4C4DE /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD81691B00321000E4C4DE /* MKImageView.swift */; };
-		78BD81711B00321000E4C4DE /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD816A1B00321000E4C4DE /* MKLabel.swift */; };
-		78BD81721B00321000E4C4DE /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD816B1B00321000E4C4DE /* MKLayer.swift */; };
-		78BD81731B00321000E4C4DE /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD816C1B00321000E4C4DE /* MKTableViewCell.swift */; };
-		78BD81741B00321000E4C4DE /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD816D1B00321000E4C4DE /* MKTextField.swift */; };
 		78C37EC81AFAF69600C59556 /* PersonalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C37EC71AFAF69600C59556 /* PersonalInformationTableViewController.swift */; };
 		78C37ECA1AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C37EC91AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift */; };
 		78C37ECE1AFB4AC900C59556 /* GetTeacherPerImfor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C37ECD1AFB4AC900C59556 /* GetTeacherPerImfor.swift */; };
@@ -56,6 +48,14 @@
 		78F663E11AEF1883004B12C1 /* EditUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E01AEF1883004B12C1 /* EditUserCell.swift */; };
 		78F663E31AEF7987004B12C1 /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E21AEF7987004B12C1 /* UserIdentity.swift */; };
 		78F663E71AEF9211004B12C1 /* QRcodeShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E61AEF9211004B12C1 /* QRcodeShowViewController.swift */; };
+		A256AF111B2E9F0200E3D15D /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0A1B2E9F0200E3D15D /* MKButton.swift */; };
+		A256AF121B2E9F0200E3D15D /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0B1B2E9F0200E3D15D /* MKTextField.swift */; };
+		A256AF131B2E9F0200E3D15D /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0C1B2E9F0200E3D15D /* MKTableViewCell.swift */; };
+		A256AF141B2E9F0200E3D15D /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0D1B2E9F0200E3D15D /* MKLabel.swift */; };
+		A256AF151B2E9F0200E3D15D /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0E1B2E9F0200E3D15D /* MKImageView.swift */; };
+		A256AF161B2E9F0200E3D15D /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0F1B2E9F0200E3D15D /* MKLayer.swift */; };
+		A256AF171B2E9F0200E3D15D /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF101B2E9F0200E3D15D /* MKColor.swift */; };
+		A256AF1A1B2EA0DC00E3D15D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF191B2EA0DC00E3D15D /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,6 @@
 		7805AC051AF8525E00E9076D /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		782195941AE2462E0018AC26 /* UserReposity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReposity.swift; sourceTree = "<group>"; };
 		782195961AE2463A0018AC26 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		782195E41AE24AC80018AC26 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
 		78433E0C1AE4E86100D2E72F /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		785104E61AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherMainActivityTableViewController.swift; sourceTree = "<group>"; };
 		7884EB7E1ADBA02500CC97F0 /* XHVolunteeriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHVolunteeriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,13 +84,6 @@
 		7884EB981ADBA02500CC97F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7884EB991ADBA02500CC97F0 /* XHVolunteeriOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHVolunteeriOSTests.swift; sourceTree = "<group>"; };
 		7884EBA41ADBC54D00CC97F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		78BD81671B00321000E4C4DE /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
-		78BD81681B00321000E4C4DE /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
-		78BD81691B00321000E4C4DE /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKImageView.swift; sourceTree = "<group>"; };
-		78BD816A1B00321000E4C4DE /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
-		78BD816B1B00321000E4C4DE /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
-		78BD816C1B00321000E4C4DE /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTableViewCell.swift; sourceTree = "<group>"; };
-		78BD816D1B00321000E4C4DE /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
 		78C37EC71AFAF69600C59556 /* PersonalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInformationTableViewController.swift; sourceTree = "<group>"; };
 		78C37EC91AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPersonalInformationTableViewController.swift; sourceTree = "<group>"; };
 		78C37ECD1AFB4AC900C59556 /* GetTeacherPerImfor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTeacherPerImfor.swift; sourceTree = "<group>"; };
@@ -122,6 +114,14 @@
 		78F663E01AEF1883004B12C1 /* EditUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserCell.swift; sourceTree = "<group>"; };
 		78F663E21AEF7987004B12C1 /* UserIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdentity.swift; sourceTree = "<group>"; };
 		78F663E61AEF9211004B12C1 /* QRcodeShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRcodeShowViewController.swift; sourceTree = "<group>"; };
+		A256AF0A1B2E9F0200E3D15D /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKButton.swift; path = "../../../Downloads/MaterialKit-master/Source/MKButton.swift"; sourceTree = "<group>"; };
+		A256AF0B1B2E9F0200E3D15D /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKTextField.swift; path = "../../../Downloads/MaterialKit-master/Source/MKTextField.swift"; sourceTree = "<group>"; };
+		A256AF0C1B2E9F0200E3D15D /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKTableViewCell.swift; path = "../../../Downloads/MaterialKit-master/Source/MKTableViewCell.swift"; sourceTree = "<group>"; };
+		A256AF0D1B2E9F0200E3D15D /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKLabel.swift; path = "../../../Downloads/MaterialKit-master/Source/MKLabel.swift"; sourceTree = "<group>"; };
+		A256AF0E1B2E9F0200E3D15D /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKImageView.swift; path = "../../../Downloads/MaterialKit-master/Source/MKImageView.swift"; sourceTree = "<group>"; };
+		A256AF0F1B2E9F0200E3D15D /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = "../../../Downloads/MaterialKit-master/Source/MKLayer.swift"; sourceTree = "<group>"; };
+		A256AF101B2E9F0200E3D15D /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = "../../../Downloads/MaterialKit-master/Source/MKColor.swift"; sourceTree = "<group>"; };
+		A256AF191B2EA0DC00E3D15D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../../Downloads/SwiftyJSON-master/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,7 @@
 			children = (
 				7884EB831ADBA02500CC97F0 /* AppDelegate.swift */,
 				7884EB851ADBA02500CC97F0 /* ViewController.swift */,
-				782195E41AE24AC80018AC26 /* SwiftyJSON.swift */,
+				A256AF191B2EA0DC00E3D15D /* SwiftyJSON.swift */,
 				7884EB8A1ADBA02500CC97F0 /* Images.xcassets */,
 				7884EBA31ADBC54D00CC97F0 /* Main.storyboard */,
 				7884EB8C1ADBA02500CC97F0 /* LaunchScreen.xib */,
@@ -208,13 +208,13 @@
 		78BD81621B0030F400E4C4DE /* MaterialKit */ = {
 			isa = PBXGroup;
 			children = (
-				78BD81671B00321000E4C4DE /* MKButton.swift */,
-				78BD81681B00321000E4C4DE /* MKColor.swift */,
-				78BD81691B00321000E4C4DE /* MKImageView.swift */,
-				78BD816A1B00321000E4C4DE /* MKLabel.swift */,
-				78BD816B1B00321000E4C4DE /* MKLayer.swift */,
-				78BD816C1B00321000E4C4DE /* MKTableViewCell.swift */,
-				78BD816D1B00321000E4C4DE /* MKTextField.swift */,
+				A256AF0A1B2E9F0200E3D15D /* MKButton.swift */,
+				A256AF0B1B2E9F0200E3D15D /* MKTextField.swift */,
+				A256AF0C1B2E9F0200E3D15D /* MKTableViewCell.swift */,
+				A256AF0D1B2E9F0200E3D15D /* MKLabel.swift */,
+				A256AF0E1B2E9F0200E3D15D /* MKImageView.swift */,
+				A256AF0F1B2E9F0200E3D15D /* MKLayer.swift */,
+				A256AF101B2E9F0200E3D15D /* MKColor.swift */,
 			);
 			name = MaterialKit;
 			sourceTree = "<group>";
@@ -338,6 +338,7 @@
 				TargetAttributes = {
 					7884EB7D1ADBA02500CC97F0 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = X6NC979TCF;
 					};
 					7884EB921ADBA02500CC97F0 = {
 						CreatedOnToolsVersion = 6.2;
@@ -391,15 +392,15 @@
 			files = (
 				78CC75AE1ADE6A6500CFC2CB /* ScanCode.swift in Sources */,
 				785104E71AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift in Sources */,
+				A256AF151B2E9F0200E3D15D /* MKImageView.swift in Sources */,
+				A256AF171B2E9F0200E3D15D /* MKColor.swift in Sources */,
 				78DEC8501ADCBA9300AC1846 /* RecruitActivityTableViewController.swift in Sources */,
-				78BD81701B00321000E4C4DE /* MKImageView.swift in Sources */,
 				7884EB861ADBA02500CC97F0 /* ViewController.swift in Sources */,
 				78433E0D1AE4E86100D2E72F /* MainTabBarViewController.swift in Sources */,
-				78BD81711B00321000E4C4DE /* MKLabel.swift in Sources */,
 				78D8BAB41AE742D600CBBA9A /* PtrRequest.swift in Sources */,
+				A256AF141B2E9F0200E3D15D /* MKLabel.swift in Sources */,
 				78DEC85D1ADCEF4A00AC1846 /* SettingEditTableViewController.swift in Sources */,
 				78C37ECE1AFB4AC900C59556 /* GetTeacherPerImfor.swift in Sources */,
-				78BD81721B00321000E4C4DE /* MKLayer.swift in Sources */,
 				78DEC8561ADCBF8F00AC1846 /* MyActivityTableViewController.swift in Sources */,
 				78DEC8521ADCBB5100AC1846 /* QRcodeViewController.swift in Sources */,
 				78C37ED01AFB4C3A00C59556 /* EditTeaPerImfor.swift in Sources */,
@@ -407,27 +408,27 @@
 				782195951AE2462E0018AC26 /* UserReposity.swift in Sources */,
 				78DEC85B1ADCEEB200AC1846 /* ActivityDetailTableViewController.swift in Sources */,
 				782195971AE2463A0018AC26 /* LoginViewController.swift in Sources */,
+				A256AF131B2E9F0200E3D15D /* MKTableViewCell.swift in Sources */,
 				78D8BABC1AE779AF00CBBA9A /* ActivityDB.swift in Sources */,
 				78F663DB1AEDCA09004B12C1 /* ActivityCell.swift in Sources */,
 				78D8BAB61AE75EC300CBBA9A /* PtrResponse.swift in Sources */,
 				78CC75AA1ADE5B3100CFC2CB /* Login.swift in Sources */,
 				78DEC85F1ADD0BBD00AC1846 /* ActivityInfo.swift in Sources */,
-				78BD81731B00321000E4C4DE /* MKTableViewCell.swift in Sources */,
 				7884EB841ADBA02500CC97F0 /* AppDelegate.swift in Sources */,
-				78BD816E1B00321000E4C4DE /* MKButton.swift in Sources */,
+				A256AF121B2E9F0200E3D15D /* MKTextField.swift in Sources */,
+				A256AF111B2E9F0200E3D15D /* MKButton.swift in Sources */,
 				78F663E31AEF7987004B12C1 /* UserIdentity.swift in Sources */,
-				78BD816F1B00321000E4C4DE /* MKColor.swift in Sources */,
-				782195E51AE24AC80018AC26 /* SwiftyJSON.swift in Sources */,
 				78F663DD1AEE2021004B12C1 /* ActivityDetailCell.swift in Sources */,
 				78F663E11AEF1883004B12C1 /* EditUserCell.swift in Sources */,
 				78DEC8541ADCBC7C00AC1846 /* SettingTableViewController.swift in Sources */,
 				78F663E71AEF9211004B12C1 /* QRcodeShowViewController.swift in Sources */,
 				78CC75A61ADE552500CFC2CB /* EditUserInfo.swift in Sources */,
+				A256AF1A1B2EA0DC00E3D15D /* SwiftyJSON.swift in Sources */,
 				78C37ECA1AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift in Sources */,
 				78CC75A41ADE4FA800CFC2CB /* IUserReposity.swift in Sources */,
-				78BD81741B00321000E4C4DE /* MKTextField.swift in Sources */,
 				78F663DF1AEF0DF1004B12C1 /* GetUserCell.swift in Sources */,
 				7805AC061AF8525E00E9076D /* PageContentViewController.swift in Sources */,
+				A256AF161B2E9F0200E3D15D /* MKLayer.swift in Sources */,
 				78CC75A21ADE10A200CFC2CB /* IActivityReposity.swift in Sources */,
 				78F0E95F1AE1108300562E8D /* ActivityReposity.swift in Sources */,
 				78C37EC81AFAF69600C59556 /* PersonalInformationTableViewController.swift in Sources */,
@@ -556,9 +557,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = XHVolunteeriOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -566,9 +570,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = XHVolunteeriOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

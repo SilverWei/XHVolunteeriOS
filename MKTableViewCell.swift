@@ -38,10 +38,7 @@ public class MKTableViewCell : UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
 
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        setupLayer()
-    }
+
 
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -53,20 +50,5 @@ public class MKTableViewCell : UITableViewCell {
         mkLayer.setBackgroundLayerColor(backgroundLayerColor)
         mkLayer.setCircleLayerColor(rippleLayerColor)
         mkLayer.ripplePercent = 1.2
-    }
-
-    override public func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        super.touchesBegan(touches, withEvent: event)
-
-        if let firstTouch = touches.anyObject() as? UITouch {
-            if !contentViewResized {
-                mkLayer.superLayerDidResize()
-                contentViewResized = true
-            }
-            mkLayer.didChangeTapLocation(firstTouch.locationInView(contentView))
-
-            mkLayer.animateScaleForCircleLayer(0.65, toScale: 1.0, timingFunction: rippleAniTimingFunction, duration: CFTimeInterval(rippleAniDuration))
-            mkLayer.animateAlphaForBackgroundLayer(MKTimingFunction.Linear, duration: CFTimeInterval(backgroundAniDuration))
-        }
     }
 }

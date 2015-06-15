@@ -31,7 +31,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
     //读取活动详细信息
     func ActivityDetailShow()
     {
-        let cell = tableView.self as ActivityDetailCell
+        let cell = tableView.self as! ActivityDetailCell
         cell.ActivityNameLabel.text = ActivityDetail.ActivityName
         cell.ActivityLocationLabel.text = ActivityDetail.ActivityLocation
         cell.JoinCountLabel.text = ActivityDetail.JoinCount.description + "/" + ActivityDetail.ActivityAttend.description
@@ -68,7 +68,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
         actionSheet.showInView(self.tableView)
     }
 
-    func actionSheet(actionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int) {
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         println(buttonIndex)
         
         switch buttonIndex
@@ -103,8 +103,8 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "QRcodeShowView" //进入数据详情页面 ShowActivity为storyboard的ldentifier标示
         {
-            (segue.destinationViewController as QRcodeShowViewController).ActivityID = ActivityDetail.ActivityID
-            (segue.destinationViewController as QRcodeShowViewController).IndexName = ActivityDetail.ActivityName
+            (segue.destinationViewController as! QRcodeShowViewController).ActivityID = ActivityDetail.ActivityID
+            (segue.destinationViewController as! QRcodeShowViewController).IndexName = ActivityDetail.ActivityName
         }
     }
 

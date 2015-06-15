@@ -33,7 +33,7 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         }
         
         captureSession = AVCaptureSession()
-        captureSession?.addInput(input as AVCaptureInput)
+        captureSession?.addInput(input as! AVCaptureInput)
         
         let captureMetadataOutput = AVCaptureMetadataOutput()
         captureSession?.addOutput(captureMetadataOutput)
@@ -70,11 +70,11 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             return
         }
         
-        let metadataObj = metadataObjects[0] as AVMetadataMachineReadableCodeObject
+        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         if metadataObj.type == AVMetadataObjectTypeQRCode
         {
-            let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObj as AVMetadataMachineReadableCodeObject) as AVMetadataMachineReadableCodeObject
+            let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObj as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
             qrCodeFrameView?.frame = barCodeObject.bounds
             
             if metadataObj.stringValue != nil

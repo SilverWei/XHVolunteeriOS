@@ -16,7 +16,7 @@ func GetActivitiesData(postData :PullDownRequest) -> PtrResponse
     var param = PullDownRequest(ptrRequest: PtrRequest(Skip: postData.ptrRequest.Skip, Count: 10, LocalData: PtrUpdateParam(Id: nil, IndexId: nil, Tick: nil), Guid: ""), request: postData.request) //请求的数据模型
     var Response:PtrResponse? //返回值的定义
     
-    if let url = NSURL(string: urlStr) {
+    if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
         postRequest.timeoutInterval = 5.0
         postRequest.HTTPMethod = "POST"
@@ -62,7 +62,7 @@ func AddApply(ActivityID:String) -> PullDownResult //参加报名
     var UserRole:String = ""
     var Result:PullDownResult?
     
-    if let url = NSURL(string: urlStr) {
+    if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
         postRequest.timeoutInterval = 5.0
         postRequest.HTTPMethod = "POST"
@@ -91,7 +91,7 @@ func ScanCode(ActivityID:String) -> ScanCodeRequest //首次刷二维码
     var UserRole:String = ""
     var Result:ScanCodeRequest?
     
-    if let url = NSURL(string: urlStr) {
+    if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
         postRequest.timeoutInterval = 5.0
         postRequest.HTTPMethod = "POST"
@@ -120,7 +120,7 @@ func TwoScanCode(ActivityID:String) -> ScanCodeRequest //第二次刷二维码
     var UserRole:String = ""
     var Result:ScanCodeRequest?
     
-    if let url = NSURL(string: urlStr) {
+    if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
         postRequest.timeoutInterval = 5.0
         postRequest.HTTPMethod = "POST"
@@ -150,7 +150,7 @@ func EndActivity(活动ID ActivityID:String) -> PullDownResult //结束活动
     var UserRole:String = ""
     var Result:PullDownResult?
     
-    if let url = NSURL(string: urlStr) {
+    if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
         postRequest.timeoutInterval = 5.0
         postRequest.HTTPMethod = "POST"
@@ -180,7 +180,7 @@ func GetActivityInfos(活动ID IndexId:Int) -> ActivityInfos  //获取活动详�
     var UserRole:String = ""
     var Response:ActivityInfos?
     
-    if let url = NSURL(string: urlStr) {
+    if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
         postRequest.timeoutInterval = 5.0
         postRequest.HTTPMethod = "POST"

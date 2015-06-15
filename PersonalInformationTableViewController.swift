@@ -23,7 +23,7 @@ class PersonalInformationTableViewController: UITableViewController {
     func TeaPerImformationShow()
     {
         var TeaPerImforDetail:InfoOut! = GetUserInfo()
-        let cell = tableView.self as GetTeacherPerImfor
+        let cell = tableView.self as! GetTeacherPerImfor
         cell.UserNameUILabel.text = TeaPerImforDetail.UserName
         cell.SexUILabel.text = TeaPerImforDetail.Sex == true ? "男" : "女"
         cell.QQNumberUILabel.text = TeaPerImforDetail.QQNumber
@@ -34,9 +34,9 @@ class PersonalInformationTableViewController: UITableViewController {
     
     @IBAction func savePerImfoEdit(segue:UIStoryboardSegue)
     {
-        let EditPerImfoController = segue.sourceViewController as EditPersonalInformationTableViewController
+        let EditPerImfoController = segue.sourceViewController as! EditPersonalInformationTableViewController
         
-        let cell = EditPerImfoController.tableView.self as EditTeaPerImfor
+        let cell = EditPerImfoController.tableView.self as! EditTeaPerImfor
         EditUser(性别: cell.SexSegmentedControl.selectedSegmentIndex == 0 ? true : false, 联系方式: cell.PhoneNumberTextField.text, QQ号: cell.QQNumberTextField.text, 个人简介: "")
         
         TeaPerImformationShow()

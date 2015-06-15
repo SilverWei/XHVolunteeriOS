@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s0Y-n9-ljI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s0Y-n9-ljI">
     <dependencies>
-        <deployment version="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment version="2048" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -1430,25 +1430,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="活动说明" id="2Wi-2t-9fa">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="258" id="SdI-i3-5gH" customClass="MKTableViewCell" customModule="XHVolunteeriOS" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="129" id="SdI-i3-5gH" customClass="MKTableViewCell" customModule="XHVolunteeriOS" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SdI-i3-5gH" id="bAg-zS-8BQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owU-ys-a93">
-                                                    <rect key="frame" x="8" y="9" width="359" height="134"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="134" id="Cal-ym-DVy"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="8" y="8" width="359" height="117"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="owU-ys-a93" firstAttribute="top" secondItem="bAg-zS-8BQ" secondAttribute="topMargin" constant="1" id="1co-rq-iog"/>
-                                                <constraint firstItem="owU-ys-a93" firstAttribute="trailing" secondItem="bAg-zS-8BQ" secondAttribute="trailingMargin" id="dYQ-2V-ub3"/>
-                                                <constraint firstItem="owU-ys-a93" firstAttribute="leading" secondItem="bAg-zS-8BQ" secondAttribute="leadingMargin" id="oU1-7p-ifT"/>
+                                                <constraint firstItem="owU-ys-a93" firstAttribute="leading" secondItem="bAg-zS-8BQ" secondAttribute="leadingMargin" id="1eO-sG-cpV"/>
+                                                <constraint firstItem="owU-ys-a93" firstAttribute="top" secondItem="bAg-zS-8BQ" secondAttribute="topMargin" id="RcW-ar-S71"/>
+                                                <constraint firstItem="owU-ys-a93" firstAttribute="trailing" secondItem="bAg-zS-8BQ" secondAttribute="trailingMargin" id="T0v-Yx-N7D"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="owU-ys-a93" secondAttribute="bottom" constant="-5" id="VRi-37-kKi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1470,7 +1468,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="活动详情" id="Azb-l1-X3c">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ejz-F0-NvG">
+                        <barButtonItem key="rightBarButtonItem" id="Ejz-F0-NvG">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hR6-1l-xcQ" customClass="MKButton" customModule="XHVolunteeriOS" customModuleProvider="target">
                                 <rect key="frame" x="325" y="7" width="35" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1692,7 +1690,7 @@
         <image name="setting" width="19" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zWP-aT-ciX"/>
-        <segue reference="15S-Gw-Bo6"/>
+        <segue reference="WZc-eS-g75"/>
+        <segue reference="afz-8a-EOW"/>
     </inferredMetricsTieBreakers>
 </document>

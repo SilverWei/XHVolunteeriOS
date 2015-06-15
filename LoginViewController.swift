@@ -57,8 +57,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func LastLogin()
     {
         //读取上次配置
-        self.UserName.text = NSUserDefaults.standardUserDefaults().valueForKey("UserNameKey") as String!
-        self.UserPassword.text = NSUserDefaults.standardUserDefaults().valueForKey("PwdKey") as String!
+        self.UserName.text = NSUserDefaults.standardUserDefaults().valueForKey("UserNameKey") as! String!
+        self.UserPassword.text = NSUserDefaults.standardUserDefaults().valueForKey("PwdKey") as! String!
         
         //判断是否第一次启动：
         if((NSUserDefaults.standardUserDefaults().boolForKey("IsFirstLaunch") as Bool!) == false){
@@ -115,11 +115,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         //收起键盘
         UserName.resignFirstResponder()
         UserPassword.resignFirstResponder()
     }
+
+
     
     /*
     // MARK: - Navigation
