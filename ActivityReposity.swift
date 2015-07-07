@@ -109,7 +109,19 @@ func ScanCode(ActivityID:String) -> ScanCodeRequest //首次刷二维码
             println(responsestr)
             
             var json = JSON(data: response)
-            Result = ScanCodeRequest(ScanRequest: json["ScanRequest"].string!)
+            if(json["request"].int32 == 0)
+            {
+                Result = ScanCodeRequest(ScanRequest: json["活动签到成功！"].string!)
+            }
+            if(json["request"].int32 == 1)
+            {
+                Result = ScanCodeRequest(ScanRequest: "第二次签到！")
+            }
+            if(json["request"].int32 == 2)
+            {
+                Result = ScanCodeRequest(ScanRequest: json["Errormsg"].string!)
+            }
+            
         }
     }
     return Result!

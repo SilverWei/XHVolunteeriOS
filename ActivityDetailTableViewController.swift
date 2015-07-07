@@ -12,14 +12,18 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
 
     var ActivityDetail:ActivityInfos!
     var indexId:Int!
+    @IBOutlet weak var MenuButton: MKButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         ActivityDetail = GetActivityInfos(活动ID: indexId)
         
+
+        
         ActivityDetailShow()
+
 
     }
 
@@ -34,6 +38,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
         let cell = tableView.self as! ActivityDetailCell
         cell.ActivityNameLabel.text = ActivityDetail.ActivityName
         cell.ActivityLocationLabel.text = ActivityDetail.ActivityLocation
+        cell.UserNameLabel.text = ActivityDetail.UserName
         cell.JoinCountLabel.text = ActivityDetail.JoinCount.description + "/" + ActivityDetail.ActivityAttend.description
         cell.ActivityStartTimeLabel.text = DateTimeChange(ActivityDetail.ActivityStartTime)
         cell.ActivityEndTimeLabel.text = DateTimeChange(ActivityDetail.ActivityEndTime)
@@ -41,6 +46,11 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
         cell.TeamNameLabel.text = ActivityDetail.TeamName
         println(ActivityDetail.JoinCount)
         tableView.reloadData()
+        //学生隐藏菜单按钮
+        if(Identity == UserIdentity.MemberView && ActivityDetail.IsJoining == true)
+        {
+            MenuButton.hidden = true
+        }
     }
     
     //日期格式转化
@@ -58,10 +68,10 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
             actionSheet.addButtonWithTitle("生成二维码")
             actionSheet.addButtonWithTitle("结束活动")
         }
-        if(Identity == UserIdentity.MemberView && ActivityDetail.IsJoining == true)
-        {
-            actionSheet.addButtonWithTitle("加入活动")
-        }
+//        if(Identity == UserIdentity.MemberView && ActivityDetail.IsJoining == false)
+//        {
+//            actionSheet.addButtonWithTitle("加入活动")
+//        }
 
         actionSheet.cancelButtonIndex = 0
         actionSheet.delegate = self

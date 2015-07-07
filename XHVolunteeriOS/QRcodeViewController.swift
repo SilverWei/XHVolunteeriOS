@@ -16,6 +16,7 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
+    @IBOutlet weak var QRView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,18 +44,19 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        videoPreviewLayer?.frame = view.layer.bounds
-        view.layer.addSublayer(videoPreviewLayer)
+        videoPreviewLayer?.frame = QRView.layer.bounds
+        QRView.layer.addSublayer(videoPreviewLayer)
         
         captureSession?.startRunning()
         
-        view.bringSubviewToFront(messageLabel)
+        QRView.bringSubviewToFront(messageLabel)
         
-        qrCodeFrameView = UIView()
-        qrCodeFrameView?.layer.borderColor = UIColor.greenColor().CGColor
-        qrCodeFrameView?.layer.borderWidth = 2
-        view.addSubview(qrCodeFrameView!)
-        view.bringSubviewToFront(qrCodeFrameView!)
+        
+//        qrCodeFrameView = UIView()
+//        qrCodeFrameView?.layer.borderColor = UIColor.greenColor().CGColor
+//        qrCodeFrameView?.layer.borderWidth = 2
+//        QRView.addSubview(qrCodeFrameView!)
+//        QRView.bringSubviewToFront(qrCodeFrameView!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,9 +81,20 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             
             if metadataObj.stringValue != nil
             {
-                messageLabel.text = metadataObj.stringValue
+                captureSession?.stopRunning()
+                
+                //数据传输
+                var ScanRequest = ScanCode(metadataObj.stringValue).ScanRequest
+                
+                var alert = UIAlertView()
+                alert.title = "提示"
+                alert.message = ScanRequest
+                alert.addButtonWithTitle("确定")
+                alert.show()
+                self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
+
     }
     
     @IBAction func CloseViewButton(sender: AnyObject) {

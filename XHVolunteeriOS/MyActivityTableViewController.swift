@@ -171,6 +171,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
     {
         return (DateTime as NSString).substringToIndex(10) + " " + ((DateTime as NSString).substringFromIndex(11) as NSString).substringToIndex(5)
     }
+
     
     //页面对外接口
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
