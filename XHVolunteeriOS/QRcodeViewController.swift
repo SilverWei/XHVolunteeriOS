@@ -16,6 +16,7 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
+    var ActivityID:String = ""
     @IBOutlet weak var QRView: UIView!
     
     override func viewDidLoad() {
@@ -68,7 +69,7 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         if metadataObjects == nil || metadataObjects.count == 0
         {
             qrCodeFrameView?.frame = CGRectZero
-            messageLabel.text = "No QR code is detected"
+            messageLabel.text = "请在活动结束后再次进行签到以累计时长！"
             return
         }
         
@@ -79,24 +80,86 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObj as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
             qrCodeFrameView?.frame = barCodeObject.bounds
             
+            ActivityID = metadataObj.stringValue
+            
             if metadataObj.stringValue != nil
             {
                 captureSession?.stopRunning()
                 
                 //数据传输
-                var ScanRequest = ScanCode(metadataObj.stringValue).ScanRequest
-                
-                var alert = UIAlertView()
-                alert.title = "提示"
-                alert.message = ScanRequest
-                alert.addButtonWithTitle("确定")
-                alert.show()
-                self.dismissViewControllerAnimated(true, completion: nil)
+                var ScanRequest = ScanCode(metadataObj.stringValue)
+                if(ScanRequest.request == ScanType.First) //第一次扫描
+                {
+                    var alert = UIAlertView()
+                    alert.title = "提示"
+                    alert.message = "活动签到成功！"
+                    alert.addButtonWithTitle("确定")
+                    alert.show()
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                else if(ScanRequest.request == ScanType.Second) //第二次扫描
+                {
+                    println(ScanRequest.ActivityName)
+                    
+                    var alert = UIAlertView()
+                    alert.title = "是否完结当前参与的活动"
+                    alert.message = "当前参与的活动为\"" + ScanRequest.ActivityName! + "\"，累计时长为\(ScanRequest.ActivityLong)分钟。"
+                    alert.addButtonWithTitle("确定")
+                    alert.addButtonWithTitle("取消")
+                    alert.cancelButtonIndex = 1
+                    alert.delegate = self
+                    alert.show()
+                //    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                else if(ScanRequest.request == ScanType.Error)
+                {
+                    var alert = UIAlertView()
+                    alert.title = "错误"
+                    alert.message = ScanRequest.Errormsg
+                    alert.addButtonWithTitle("确定")
+                    alert.show()
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+
             }
         }
 
     }
     
+    func alertView(alertView:UIAlertView, clickedButtonAtIndex buttonIndex:Int)
+    {
+        if(buttonIndex == alertView.cancelButtonIndex)
+        {
+            println("点击了取消")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else
+        {
+            
+            println("点击了确认")
+            
+            var TwoScanRequest = TwoScanCode(ActivityID)
+            if(TwoScanRequest.request == ScanType.Error)
+            {
+                var alert = UIAlertView()
+                alert.title = "提示"
+                alert.message = TwoScanRequest.Errormsg
+                alert.addButtonWithTitle("确定")
+                alert.show()
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            else
+            {
+                var alert = UIAlertView()
+                alert.title = "提示"
+                alert.message = "您已完结本活动！"
+                alert.addButtonWithTitle("确定")
+                alert.show()
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+    }
+
     @IBAction func CloseViewButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }

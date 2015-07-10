@@ -18,11 +18,11 @@ class ScanCodeRequest: NSObject {
 
 class ScanCodeResult: NSObject {
     var request:ScanType
-    var Errormsg:String
+    var Errormsg:String?
     var ActivityLong:Int
-    var ActivityName:String
+    var ActivityName:String?
     
-    init(request:ScanType,Errormsg:String,ActivityLong:Int,ActivityName:String) {
+    init(request:ScanType,Errormsg:String?,ActivityLong:Int,ActivityName:String?) {
         self.request = request
         self.Errormsg = Errormsg
         self.ActivityLong = ActivityLong

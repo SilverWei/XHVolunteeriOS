@@ -85,11 +85,11 @@ func AddApply(ActivityID:String) -> PullDownResult //参加报名
     }
     return Result!
 }
-func ScanCode(ActivityID:String) -> ScanCodeRequest //首次刷二维码
+func ScanCode(ActivityID:String) -> ScanCodeResult //首次刷二维码
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "ScanCode")
     var UserRole:String = ""
-    var Result:ScanCodeRequest?
+    var Result:ScanCodeResult?
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
@@ -109,28 +109,16 @@ func ScanCode(ActivityID:String) -> ScanCodeRequest //首次刷二维码
             println(responsestr)
             
             var json = JSON(data: response)
-            if(json["request"].int32 == 0)
-            {
-                Result = ScanCodeRequest(ScanRequest: json["活动签到成功！"].string!)
-            }
-            if(json["request"].int32 == 1)
-            {
-                Result = ScanCodeRequest(ScanRequest: "第二次签到！")
-            }
-            if(json["request"].int32 == 2)
-            {
-                Result = ScanCodeRequest(ScanRequest: json["Errormsg"].string!)
-            }
-            
+            Result = ScanCodeResult(request: ScanType(rawValue: json["request"].int!)!, Errormsg: json["Errormsg"].string, ActivityLong: json["ActivityLong"].int!, ActivityName: json["ActivityName"].string)
         }
     }
     return Result!
 }
-func TwoScanCode(ActivityID:String) -> ScanCodeRequest //第二次刷二维码
+func TwoScanCode(ActivityID:String) -> ScanCodeResult //第二次刷二维码
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "TwoScanCode")
     var UserRole:String = ""
-    var Result:ScanCodeRequest?
+    var Result:ScanCodeResult?
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
@@ -150,7 +138,7 @@ func TwoScanCode(ActivityID:String) -> ScanCodeRequest //第二次刷二维码
             println(responsestr)
             
             var json = JSON(data: response)
-            Result = ScanCodeRequest(ScanRequest: json["ScanRequest"].string!)
+            Result = ScanCodeResult(request: ScanType(rawValue: json["request"].int!)!, Errormsg: json["Errormsg"].string, ActivityLong: json["ActivityLong"].int!, ActivityName: json["ActivityName"].string)
         }
     }
     return Result!
