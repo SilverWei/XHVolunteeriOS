@@ -9,7 +9,7 @@
 import Foundation
 let BaseUrlMActivity = "172.16.100.41:8080/MActivity"
 
-func GetActivitiesData(postData :PullDownRequest) -> PtrResponse
+func GetActivitiesData(postData :PullDownRequest) -> PtrResponse?
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "GetActivitiesByPage") //GetActivitiesByPage是web端接口
     var UserRole:String = ""
@@ -18,7 +18,7 @@ func GetActivitiesData(postData :PullDownRequest) -> PtrResponse
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
-        postRequest.timeoutInterval = 5.0
+        postRequest.timeoutInterval = 3.0
         postRequest.HTTPMethod = "POST"
         
         postRequest.HTTPBody = "{ptrRequest:{\"Skip\":\(param.ptrRequest.Skip),\"Count\":\(param.ptrRequest.Count),\"LocalData\":[],\"Guid\":\"\"},request:\"\(param.request.hashValue)\"}".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) //param数据转换为json格式发出请求
@@ -49,8 +49,10 @@ func GetActivitiesData(postData :PullDownRequest) -> PtrResponse
                 
             }
             Response = PtrResponse(updatedata: updateDB, TotalCount: json["TotalCount"].int!, Guid: json["Guid"].string!)
-            
-            ////////////////////////////////////////
+        }
+        else
+        {
+            return nil
         }
     }
     return Response!
@@ -64,7 +66,7 @@ func AddApply(ActivityID:String) -> PullDownResult //参加报名
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
-        postRequest.timeoutInterval = 5.0
+        postRequest.timeoutInterval = 3.0
         postRequest.HTTPMethod = "POST"
         //postRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -85,15 +87,15 @@ func AddApply(ActivityID:String) -> PullDownResult //参加报名
     }
     return Result!
 }
-func ScanCode(ActivityID:String) -> ScanCodeRequest //首次刷二维码
+func ScanCode(ActivityID:String) -> ScanCodeResult //首次刷二维码
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "ScanCode")
     var UserRole:String = ""
-    var Result:ScanCodeRequest?
+    var Result:ScanCodeResult?
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
-        postRequest.timeoutInterval = 5.0
+        postRequest.timeoutInterval = 3.0
         postRequest.HTTPMethod = "POST"
         //postRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -109,20 +111,20 @@ func ScanCode(ActivityID:String) -> ScanCodeRequest //首次刷二维码
             println(responsestr)
             
             var json = JSON(data: response)
-            Result = ScanCodeRequest(ScanRequest: json["ScanRequest"].string!)
+            Result = ScanCodeResult(request: ScanType(rawValue: json["request"].int!)!, Errormsg: json["Errormsg"].string, ActivityLong: json["ActivityLong"].int!, ActivityName: json["ActivityName"].string)
         }
     }
     return Result!
 }
-func TwoScanCode(ActivityID:String) -> ScanCodeRequest //第二次刷二维码
+func TwoScanCode(ActivityID:String) -> ScanCodeResult //第二次刷二维码
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "TwoScanCode")
     var UserRole:String = ""
-    var Result:ScanCodeRequest?
+    var Result:ScanCodeResult?
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
-        postRequest.timeoutInterval = 5.0
+        postRequest.timeoutInterval = 3.0
         postRequest.HTTPMethod = "POST"
         //postRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -138,7 +140,7 @@ func TwoScanCode(ActivityID:String) -> ScanCodeRequest //第二次刷二维码
             println(responsestr)
             
             var json = JSON(data: response)
-            Result = ScanCodeRequest(ScanRequest: json["ScanRequest"].string!)
+            Result = ScanCodeResult(request: ScanType(rawValue: json["request"].int!)!, Errormsg: json["Errormsg"].string, ActivityLong: json["ActivityLong"].int!, ActivityName: json["ActivityName"].string)
         }
     }
     return Result!
@@ -152,7 +154,7 @@ func EndActivity(活动ID ActivityID:String) -> PullDownResult //结束活动
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
-        postRequest.timeoutInterval = 5.0
+        postRequest.timeoutInterval = 3.0
         postRequest.HTTPMethod = "POST"
         //postRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -182,7 +184,7 @@ func GetActivityInfos(活动ID IndexId:Int) -> ActivityInfos  //获取活动详�
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
-        postRequest.timeoutInterval = 5.0
+        postRequest.timeoutInterval = 3.0
         postRequest.HTTPMethod = "POST"
         //postRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         

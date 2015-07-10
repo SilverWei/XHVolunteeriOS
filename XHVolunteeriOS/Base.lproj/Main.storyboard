@@ -1212,29 +1212,42 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR Code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udy-xa-JI4">
-                                <rect key="frame" x="0.0" y="630" width="375" height="37"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRa-ZF-aY9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请在活动结束后再次进行签到以累计时长！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udy-xa-JI4">
+                                        <rect key="frame" x="0.0" y="566" width="375" height="37"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="zmt-g7-Euw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="zmt-g7-Euw"/>
+                                    <constraint firstAttribute="trailing" secondItem="udy-xa-JI4" secondAttribute="trailing" id="7lb-Zw-3xa"/>
+                                    <constraint firstAttribute="bottom" secondItem="udy-xa-JI4" secondAttribute="bottom" id="PD3-f5-h7D"/>
+                                    <constraint firstItem="udy-xa-JI4" firstAttribute="leading" secondItem="tRa-ZF-aY9" secondAttribute="leading" id="bS7-RI-qkO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tRa-ZF-aY9" firstAttribute="leading" secondItem="ky1-OT-f60" secondAttribute="leadingMargin" constant="-16" id="2RF-A1-fRA"/>
+                            <constraint firstItem="tRa-ZF-aY9" firstAttribute="top" secondItem="hgL-Dv-sYv" secondAttribute="bottom" constant="44" id="2gQ-s7-gv7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tRa-ZF-aY9" secondAttribute="trailing" constant="-16" id="HWv-Kl-Sgi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="49g-r2-so7" secondAttribute="trailing" constant="-16" id="NzG-eJ-cY6"/>
-                            <constraint firstItem="udy-xa-JI4" firstAttribute="leading" secondItem="ky1-OT-f60" secondAttribute="leadingMargin" constant="-16" id="Y6V-fB-dqZ"/>
                             <constraint firstItem="49g-r2-so7" firstAttribute="leading" secondItem="ky1-OT-f60" secondAttribute="leading" id="ckD-ho-MK0"/>
                             <constraint firstItem="49g-r2-so7" firstAttribute="top" secondItem="hgL-Dv-sYv" secondAttribute="bottom" id="ghQ-de-ifd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="udy-xa-JI4" secondAttribute="trailing" constant="-16" id="nTD-Pn-P8r"/>
-                            <constraint firstAttribute="bottom" secondItem="udy-xa-JI4" secondAttribute="bottom" id="pXa-Kf-ceU"/>
+                            <constraint firstAttribute="bottom" secondItem="tRa-ZF-aY9" secondAttribute="bottom" id="m63-BH-Lkd"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="QRView" destination="tRa-ZF-aY9" id="bgl-TR-fra"/>
                         <outlet property="messageLabel" destination="udy-xa-JI4" id="tVq-9s-bOI"/>
                     </connections>
                 </viewController>
@@ -1483,6 +1496,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="MenuButton" destination="hR6-1l-xcQ" id="GEa-aH-HAP"/>
                         <segue destination="Wd0-ND-LbL" kind="show" identifier="QRcodeShowView" id="32v-hY-3zn"/>
                     </connections>
                 </tableViewController>
@@ -1494,12 +1508,12 @@
         <scene sceneID="ogr-w8-e6W">
             <objects>
                 <tableViewController title="所有活动" id="V8j-XE-POV" customClass="TeacherMainActivityTableViewController" customModule="XHVolunteeriOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" id="k0t-9M-J44">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" id="k0t-9M-J44">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AllActivityCell" rowHeight="98" id="wpG-ue-nmo" customClass="ActivityCell" customModule="XHVolunteeriOS" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AllActivityCell" rowHeight="78" id="wpG-ue-nmo" customClass="ActivityCell" customModule="XHVolunteeriOS" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wpG-ue-nmo" id="LSF-IP-LEB">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1535,7 +1549,7 @@
                                         <constraint firstItem="yyY-Ug-PHi" firstAttribute="top" secondItem="Avl-gu-paJ" secondAttribute="bottom" constant="12" id="3th-uw-uxb"/>
                                         <constraint firstAttribute="trailing" secondItem="Avl-gu-paJ" secondAttribute="trailing" id="8N3-hr-fSd"/>
                                         <constraint firstItem="yyY-Ug-PHi" firstAttribute="leading" secondItem="HY6-3r-7zH" secondAttribute="leading" id="9nF-4k-eNs"/>
-                                        <constraint firstAttribute="bottom" secondItem="HY6-3r-7zH" secondAttribute="bottom" constant="44" id="G2s-7x-SIQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="HY6-3r-7zH" secondAttribute="bottom" constant="24" id="G2s-7x-SIQ"/>
                                         <constraint firstItem="Avl-gu-paJ" firstAttribute="leading" secondItem="LSF-IP-LEB" secondAttribute="leading" constant="8" id="YNN-m6-JIM"/>
                                         <constraint firstItem="HY6-3r-7zH" firstAttribute="leading" secondItem="LSF-IP-LEB" secondAttribute="leading" constant="8" id="rKO-GA-sj7"/>
                                         <constraint firstItem="Avl-gu-paJ" firstAttribute="top" secondItem="LSF-IP-LEB" secondAttribute="top" constant="12" id="sPP-34-Dh8"/>
@@ -1690,7 +1704,7 @@
         <image name="setting" width="19" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WZc-eS-g75"/>
         <segue reference="afz-8a-EOW"/>
+        <segue reference="WZc-eS-g75"/>
     </inferredMetricsTieBreakers>
 </document>

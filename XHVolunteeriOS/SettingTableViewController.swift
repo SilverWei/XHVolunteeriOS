@@ -24,15 +24,23 @@ class SettingTableViewController: UITableViewController {
 
     func UserDetailShow()
     {
-        var UserDetail:InfoOut! = GetUserInfo()
-        let cell = tableView.self as! GetUserCell
-        cell.UserNameUILabel.text = UserDetail.UserName
-        cell.PhoneNumberUILabel.text = UserDetail.PhoneNumber
-        cell.TeamNameUILabel.text = UserDetail.TeamName
-        cell.QQNumberUILabel.text = UserDetail.QQNumber
-        cell.PersonalInfoUILabel.text = UserDetail.PersonalInfo
-        cell.ActivityLongUILabel.text = UserDetail.ActivityLong + "小时"
-        cell.SexUILabel.text = UserDetail.Sex == true ? "男" : "女"
+        var UserDetail:InfoOut? = GetUserInfo()
+        if(UserDetail != nil)
+        {
+            let cell = tableView.self as! GetUserCell
+            cell.UserNameUILabel.text = UserDetail!.UserName
+            cell.PhoneNumberUILabel.text = UserDetail!.PhoneNumber
+            cell.TeamNameUILabel.text = UserDetail!.TeamName
+            cell.QQNumberUILabel.text = UserDetail!.QQNumber
+            cell.PersonalInfoUILabel.text = UserDetail!.PersonalInfo
+            cell.ActivityLongUILabel.text = UserDetail!.ActivityLong + "小时"
+            cell.SexUILabel.text = UserDetail!.Sex == true ? "男" : "女"
+        }
+        else
+        {
+            NetworkError()
+        }
+
     }
     
     @IBAction func saveUserEditDetail(segue:UIStoryboardSegue)
@@ -43,6 +51,15 @@ class SettingTableViewController: UITableViewController {
         println("修改完成")
         UserDetailShow()
         tableView.reloadData()
+    }
+    
+    func NetworkError()
+    {
+        var alert = UIAlertView()
+        alert.title = "错误"
+        alert.message = "网络连接失败！"
+        alert.addButtonWithTitle("确定")
+        alert.show()
     }
     
     //页面对外接口

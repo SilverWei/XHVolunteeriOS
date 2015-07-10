@@ -103,27 +103,35 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
     //读取数据库附入数据列表
     func ActivityLoad()
     {
-        var ActivityAll:PtrResponse = GetActivitiesData(PullDownRequest(ptrRequest: PtrRequest(Skip: Skip, Count: 10, LocalData: PtrUpdateParam(Id: nil, IndexId: nil, Tick: nil), Guid: ""), request: itemNumber))
-        for i in 0..<ActivityAll.updatedata.count
+        var ActivityAll:PtrResponse? = GetActivitiesData(PullDownRequest(ptrRequest: PtrRequest(Skip: Skip, Count: 10, LocalData: PtrUpdateParam(Id: nil, IndexId: nil, Tick: nil), Guid: ""), request: itemNumber))
+        if (ActivityAll != nil)
         {
-            var Activity = ActivityAll.updatedata[i] as PtrUpdaeData!
-            
-            AllActivityDB.append(ActivityDB(IndexId: Activity.Data.IndexId,
-                ActivityName: Activity.Data.ActivityName,
-                TeamName: Activity.Data.TeamName,
-                UserName: Activity.Data.UserName,
-                ActivityStartTime: Activity.Data.ActivityStartTime,
-                ActivityEndTime: Activity.Data.ActivityEndTime,
-                ActivityLocation: Activity.Data.ActivityLocation,
-                ActivitySummary: Activity.Data.ActivitySummary,
-                ActivityState: Activity.Data.ActivityState,
-                ActivityAttend: Activity.Data.ActivityAttend,
-                JoinCount: Activity.Data.JoinCount,
-                Tick: Activity.Data.Tick,
-                IsJoining: Activity.Data.IsJoining,
-                Id: Activity.Data.Id))
+            for i in 0..<ActivityAll!.updatedata.count
+            {
+                var Activity = ActivityAll!.updatedata[i] as PtrUpdaeData!
+                
+                AllActivityDB.append(ActivityDB(IndexId: Activity.Data.IndexId,
+                    ActivityName: Activity.Data.ActivityName,
+                    TeamName: Activity.Data.TeamName,
+                    UserName: Activity.Data.UserName,
+                    ActivityStartTime: Activity.Data.ActivityStartTime,
+                    ActivityEndTime: Activity.Data.ActivityEndTime,
+                    ActivityLocation: Activity.Data.ActivityLocation,
+                    ActivitySummary: Activity.Data.ActivitySummary,
+                    ActivityState: Activity.Data.ActivityState,
+                    ActivityAttend: Activity.Data.ActivityAttend,
+                    JoinCount: Activity.Data.JoinCount,
+                    Tick: Activity.Data.Tick,
+                    IsJoining: Activity.Data.IsJoining,
+                    Id: Activity.Data.Id))
+            }
+            Skip += 10
         }
-        Skip += 10
+        else
+        {
+            NetworkError()
+        }
+
     }
     
     //点击顶部选择按钮显示不同的列表 "正在参与"／“已结束”／“缺席”
@@ -170,6 +178,15 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
     func DateTimeChange(DateTime: String) -> String
     {
         return (DateTime as NSString).substringToIndex(10) + " " + ((DateTime as NSString).substringFromIndex(11) as NSString).substringToIndex(5)
+    }
+
+    func NetworkError()
+    {
+        var alert = UIAlertView()
+        alert.title = "错误"
+        alert.message = "网络连接失败！"
+        alert.addButtonWithTitle("确定")
+        alert.show()
     }
     
     //页面对外接口

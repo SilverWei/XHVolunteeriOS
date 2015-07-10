@@ -90,30 +90,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func LoginOn()
     {
-        let pullDownResult:PullDownResult = UserLogin(用户名: UserName.text,密码: UserPassword.text)
-        
-        if(pullDownResult.PtrRequest == ResultType.Success)
+        let pullDownResult:PullDownResult? = UserLogin(用户名: UserName.text,密码: UserPassword.text)
+        if(pullDownResult != nil)
         {
-            if(pullDownResult.ErrorMsg == "成员")
+            if(pullDownResult!.PtrRequest == ResultType.Success)
             {
-                self.performSegueWithIdentifier("MemberView", sender: self)
-                Identity = UserIdentity.MemberView
+                if(pullDownResult!.ErrorMsg == "成员")
+                {
+                    self.performSegueWithIdentifier("MemberView", sender: self)
+                    Identity = UserIdentity.MemberView
+                }
+                else if (pullDownResult!.ErrorMsg == "负责人" || pullDownResult!.ErrorMsg == "具体负责人")
+                {
+                    self.performSegueWithIdentifier("TeacherView", sender: self)
+                    Identity = UserIdentity.TeacherView
+                }
             }
-            else if (pullDownResult.ErrorMsg == "负责人" || pullDownResult.ErrorMsg == "具体负责人")
+            else
             {
-                self.performSegueWithIdentifier("TeacherView", sender: self)
-                Identity = UserIdentity.TeacherView
+                var alert = UIAlertView()
+                alert.title = "错误"
+                alert.message = pullDownResult!.ErrorMsg
+                alert.addButtonWithTitle("取消")
+                alert.show()
             }
         }
         else
         {
             var alert = UIAlertView()
             alert.title = "错误"
-            alert.message = pullDownResult.ErrorMsg
-            alert.addButtonWithTitle("取消")
+            alert.message = "网络连接失败！"
+            alert.addButtonWithTitle("确定")
             alert.show()
         }
+
     }
+
 
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         //收起键盘
