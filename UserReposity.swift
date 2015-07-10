@@ -9,7 +9,7 @@
 import Foundation
 var BaseUrlMUser = "172.16.100.41:8080/MUser"
 
-func UserLogin(用户名 UserName:String, 密码 Password:String) -> PullDownResult //登录
+func UserLogin(用户名 UserName:String, 密码 Password:String) -> PullDownResult? //登录
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMUser , "Login")
     var UserRole:String = ""
@@ -18,7 +18,7 @@ func UserLogin(用户名 UserName:String, 密码 Password:String) -> PullDownRes
 
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
-        postRequest.timeoutInterval = 5.0
+        postRequest.timeoutInterval = 3.0
         postRequest.HTTPMethod = "POST"
         //postRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -44,11 +44,15 @@ func UserLogin(用户名 UserName:String, 密码 Password:String) -> PullDownRes
             }
 
         }
+        else
+        {
+            return nil
+        }
     }
     return pullDownResult
 }
 
-func GetUserInfo() -> InfoOut //获取用户信息
+func GetUserInfo() -> InfoOut? //获取用户信息
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMUser , "GetUserInfo")
     var UserRole:String = ""
@@ -56,7 +60,7 @@ func GetUserInfo() -> InfoOut //获取用户信息
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
-        postRequest.timeoutInterval = 5.0
+        postRequest.timeoutInterval = 3.0
         postRequest.HTTPMethod = "POST"
         //postRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -77,8 +81,12 @@ func GetUserInfo() -> InfoOut //获取用户信息
                 Tick: json["Tick"].int!)
         }
     }
+    else
+    {
+        return nil
+    }
 
-    return UserInfo!
+    return UserInfo
 }
 
 func EditUser(性别 Sex:Bool, 联系方式 PhoneNumber:String, QQ号 QQNumber:String, 个人简介 PersonalInfo:String) //编辑用户信息
@@ -89,7 +97,7 @@ func EditUser(性别 Sex:Bool, 联系方式 PhoneNumber:String, QQ号 QQNumber:S
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
-        postRequest.timeoutInterval = 5.0
+        postRequest.timeoutInterval = 3.0
         postRequest.HTTPMethod = "POST"
         //postRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         

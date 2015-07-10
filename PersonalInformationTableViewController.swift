@@ -22,13 +22,20 @@ class PersonalInformationTableViewController: UITableViewController {
 
     func TeaPerImformationShow()
     {
-        var TeaPerImforDetail:InfoOut! = GetUserInfo()
-        let cell = tableView.self as! GetTeacherPerImfor
-        cell.UserNameUILabel.text = TeaPerImforDetail.UserName
-        cell.SexUILabel.text = TeaPerImforDetail.Sex == true ? "男" : "女"
-        cell.QQNumberUILabel.text = TeaPerImforDetail.QQNumber
+        var TeaPerImforDetail:InfoOut? = GetUserInfo()
+        if(TeaPerImforDetail != nil)
+        {
+            let cell = tableView.self as! GetTeacherPerImfor
+            cell.UserNameUILabel.text = TeaPerImforDetail!.UserName
+            cell.SexUILabel.text = TeaPerImforDetail!.Sex == true ? "男" : "女"
+            cell.QQNumberUILabel.text = TeaPerImforDetail!.QQNumber
 
-        cell.PhoneNumberUILabel.text = TeaPerImforDetail.PhoneNumber
+            cell.PhoneNumberUILabel.text = TeaPerImforDetail!.PhoneNumber
+        }
+        else
+        {
+            NetworkError()
+        }
         
     }
     
@@ -42,6 +49,15 @@ class PersonalInformationTableViewController: UITableViewController {
         TeaPerImformationShow()
         tableView.reloadData()
         
+    }
+    
+    func NetworkError()
+    {
+        var alert = UIAlertView()
+        alert.title = "错误"
+        alert.message = "网络连接失败！"
+        alert.addButtonWithTitle("确定")
+        alert.show()
     }
     
     //页面对外接口

@@ -19,12 +19,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
         super.viewDidLoad()
 
         ActivityDetail = GetActivityInfos(活动ID: indexId)
-        
-
-        
         ActivityDetailShow()
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,10 +63,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
             actionSheet.addButtonWithTitle("生成二维码")
             actionSheet.addButtonWithTitle("结束活动")
         }
-//        if(Identity == UserIdentity.MemberView && ActivityDetail.IsJoining == false)
-//        {
-//            actionSheet.addButtonWithTitle("加入活动")
-//        }
+
 
         actionSheet.cancelButtonIndex = 0
         actionSheet.delegate = self
@@ -88,7 +80,12 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
             QRcodeGet()
         case (2):
             println("结束活动")
-            println(EndActivity(活动ID: ActivityDetail.ActivityID).ErrorMsg)
+            
+            var alert = UIAlertView()
+            alert.title = "提示"
+            alert.message = EndActivity(活动ID: ActivityDetail.ActivityID).ErrorMsg
+            alert.addButtonWithTitle("确认")
+            alert.show()
             ActivityDetailShow()
         case (3):
             println("加入活动")
@@ -98,7 +95,6 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
             alert.message = AddApply(ActivityDetail.ActivityID).ErrorMsg
             alert.addButtonWithTitle("确认")
             alert.show()
-            
             ActivityDetailShow()
         default:
             println("取消")
@@ -109,6 +105,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
     {
         self.performSegueWithIdentifier("QRcodeShowView", sender: self)
     }
+
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "QRcodeShowView" //进入数据详情页面 ShowActivity为storyboard的ldentifier标示
