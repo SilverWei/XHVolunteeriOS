@@ -12,7 +12,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
 
     var ActivityDetail:ActivityInfos!
     var indexId:Int!
-    @IBOutlet weak var MenuButton: MKButton!
+    @IBOutlet weak var MenuButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -36,7 +36,6 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
         cell.UserNameLabel.text = ActivityDetail.UserName
         cell.JoinCountLabel.text = ActivityDetail.JoinCount.description + "/" + ActivityDetail.ActivityAttend.description
         cell.ActivityStartTimeLabel.text = DateTimeChange(ActivityDetail.ActivityStartTime)
-        cell.ActivityEndTimeLabel.text = DateTimeChange(ActivityDetail.ActivityEndTime)
         cell.ActivitySummaryLabel.text = ActivityDetail.ActivitySummary
         cell.TeamNameLabel.text = ActivityDetail.TeamName
         println(ActivityDetail.JoinCount)
@@ -71,7 +70,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
     }
 
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        println(buttonIndex)
+        println("右上角菜单:\(buttonIndex)")
         
         switch buttonIndex
         {

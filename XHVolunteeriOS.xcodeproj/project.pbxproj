@@ -48,13 +48,7 @@
 		78F663E11AEF1883004B12C1 /* EditUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E01AEF1883004B12C1 /* EditUserCell.swift */; };
 		78F663E31AEF7987004B12C1 /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E21AEF7987004B12C1 /* UserIdentity.swift */; };
 		78F663E71AEF9211004B12C1 /* QRcodeShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E61AEF9211004B12C1 /* QRcodeShowViewController.swift */; };
-		A256AF111B2E9F0200E3D15D /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0A1B2E9F0200E3D15D /* MKButton.swift */; };
-		A256AF121B2E9F0200E3D15D /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0B1B2E9F0200E3D15D /* MKTextField.swift */; };
-		A256AF131B2E9F0200E3D15D /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0C1B2E9F0200E3D15D /* MKTableViewCell.swift */; };
-		A256AF141B2E9F0200E3D15D /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0D1B2E9F0200E3D15D /* MKLabel.swift */; };
-		A256AF151B2E9F0200E3D15D /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0E1B2E9F0200E3D15D /* MKImageView.swift */; };
-		A256AF161B2E9F0200E3D15D /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF0F1B2E9F0200E3D15D /* MKLayer.swift */; };
-		A256AF171B2E9F0200E3D15D /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF101B2E9F0200E3D15D /* MKColor.swift */; };
+		A23A60A71BA7C1EC00B9AD95 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A60A61BA7C1EC00B9AD95 /* MD5.swift */; };
 		A256AF1A1B2EA0DC00E3D15D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A256AF191B2EA0DC00E3D15D /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,13 +108,8 @@
 		78F663E01AEF1883004B12C1 /* EditUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserCell.swift; sourceTree = "<group>"; };
 		78F663E21AEF7987004B12C1 /* UserIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdentity.swift; sourceTree = "<group>"; };
 		78F663E61AEF9211004B12C1 /* QRcodeShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRcodeShowViewController.swift; sourceTree = "<group>"; };
-		A256AF0A1B2E9F0200E3D15D /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKButton.swift; path = "../../../Downloads/MaterialKit-master/Source/MKButton.swift"; sourceTree = "<group>"; };
-		A256AF0B1B2E9F0200E3D15D /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKTextField.swift; path = "../../../Downloads/MaterialKit-master/Source/MKTextField.swift"; sourceTree = "<group>"; };
-		A256AF0C1B2E9F0200E3D15D /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKTableViewCell.swift; path = "../../../Downloads/MaterialKit-master/Source/MKTableViewCell.swift"; sourceTree = "<group>"; };
-		A256AF0D1B2E9F0200E3D15D /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKLabel.swift; path = "../../../Downloads/MaterialKit-master/Source/MKLabel.swift"; sourceTree = "<group>"; };
-		A256AF0E1B2E9F0200E3D15D /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKImageView.swift; path = "../../../Downloads/MaterialKit-master/Source/MKImageView.swift"; sourceTree = "<group>"; };
-		A256AF0F1B2E9F0200E3D15D /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = "../../../Downloads/MaterialKit-master/Source/MKLayer.swift"; sourceTree = "<group>"; };
-		A256AF101B2E9F0200E3D15D /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = "../../../Downloads/MaterialKit-master/Source/MKColor.swift"; sourceTree = "<group>"; };
+		A23A60A41BA7C1AD00B9AD95 /* XHVolunteeriOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XHVolunteeriOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		A23A60A61BA7C1EC00B9AD95 /* MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		A256AF191B2EA0DC00E3D15D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../../Downloads/SwiftyJSON-master/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,7 +134,7 @@
 		7884EB751ADBA02400CC97F0 = {
 			isa = PBXGroup;
 			children = (
-				78BD81621B0030F400E4C4DE /* MaterialKit */,
+				A23A609A1BA7BF3000B9AD95 /* MD5 */,
 				78F0E95D1AE1104400562E8D /* NetMethod */,
 				78CC75A01ADE0C5400CFC2CB /* Protocal */,
 				78DEC8581ADCEDDB00AC1846 /* Model */,
@@ -203,20 +192,6 @@
 				7884EB981ADBA02500CC97F0 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		78BD81621B0030F400E4C4DE /* MaterialKit */ = {
-			isa = PBXGroup;
-			children = (
-				A256AF0A1B2E9F0200E3D15D /* MKButton.swift */,
-				A256AF0B1B2E9F0200E3D15D /* MKTextField.swift */,
-				A256AF0C1B2E9F0200E3D15D /* MKTableViewCell.swift */,
-				A256AF0D1B2E9F0200E3D15D /* MKLabel.swift */,
-				A256AF0E1B2E9F0200E3D15D /* MKImageView.swift */,
-				A256AF0F1B2E9F0200E3D15D /* MKLayer.swift */,
-				A256AF101B2E9F0200E3D15D /* MKColor.swift */,
-			);
-			name = MaterialKit;
 			sourceTree = "<group>";
 		};
 		78CC75A01ADE0C5400CFC2CB /* Protocal */ = {
@@ -289,6 +264,15 @@
 			name = NetMethod;
 			sourceTree = "<group>";
 		};
+		A23A609A1BA7BF3000B9AD95 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				A23A60A41BA7C1AD00B9AD95 /* XHVolunteeriOS-Bridging-Header.h */,
+				A23A60A61BA7C1EC00B9AD95 /* MD5.swift */,
+			);
+			name = MD5;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,7 +317,7 @@
 		7884EB761ADBA02400CC97F0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = NineSoft;
 				TargetAttributes = {
 					7884EB7D1ADBA02500CC97F0 = {
@@ -392,13 +376,10 @@
 			files = (
 				78CC75AE1ADE6A6500CFC2CB /* ScanCode.swift in Sources */,
 				785104E71AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift in Sources */,
-				A256AF151B2E9F0200E3D15D /* MKImageView.swift in Sources */,
-				A256AF171B2E9F0200E3D15D /* MKColor.swift in Sources */,
 				78DEC8501ADCBA9300AC1846 /* RecruitActivityTableViewController.swift in Sources */,
 				7884EB861ADBA02500CC97F0 /* ViewController.swift in Sources */,
 				78433E0D1AE4E86100D2E72F /* MainTabBarViewController.swift in Sources */,
 				78D8BAB41AE742D600CBBA9A /* PtrRequest.swift in Sources */,
-				A256AF141B2E9F0200E3D15D /* MKLabel.swift in Sources */,
 				78DEC85D1ADCEF4A00AC1846 /* SettingEditTableViewController.swift in Sources */,
 				78C37ECE1AFB4AC900C59556 /* GetTeacherPerImfor.swift in Sources */,
 				78DEC8561ADCBF8F00AC1846 /* MyActivityTableViewController.swift in Sources */,
@@ -408,15 +389,13 @@
 				782195951AE2462E0018AC26 /* UserReposity.swift in Sources */,
 				78DEC85B1ADCEEB200AC1846 /* ActivityDetailTableViewController.swift in Sources */,
 				782195971AE2463A0018AC26 /* LoginViewController.swift in Sources */,
-				A256AF131B2E9F0200E3D15D /* MKTableViewCell.swift in Sources */,
 				78D8BABC1AE779AF00CBBA9A /* ActivityDB.swift in Sources */,
 				78F663DB1AEDCA09004B12C1 /* ActivityCell.swift in Sources */,
 				78D8BAB61AE75EC300CBBA9A /* PtrResponse.swift in Sources */,
 				78CC75AA1ADE5B3100CFC2CB /* Login.swift in Sources */,
 				78DEC85F1ADD0BBD00AC1846 /* ActivityInfo.swift in Sources */,
+				A23A60A71BA7C1EC00B9AD95 /* MD5.swift in Sources */,
 				7884EB841ADBA02500CC97F0 /* AppDelegate.swift in Sources */,
-				A256AF121B2E9F0200E3D15D /* MKTextField.swift in Sources */,
-				A256AF111B2E9F0200E3D15D /* MKButton.swift in Sources */,
 				78F663E31AEF7987004B12C1 /* UserIdentity.swift in Sources */,
 				78F663DD1AEE2021004B12C1 /* ActivityDetailCell.swift in Sources */,
 				78F663E11AEF1883004B12C1 /* EditUserCell.swift in Sources */,
@@ -428,7 +407,6 @@
 				78CC75A41ADE4FA800CFC2CB /* IUserReposity.swift in Sources */,
 				78F663DF1AEF0DF1004B12C1 /* GetUserCell.swift in Sources */,
 				7805AC061AF8525E00E9076D /* PageContentViewController.swift in Sources */,
-				A256AF161B2E9F0200E3D15D /* MKLayer.swift in Sources */,
 				78CC75A21ADE10A200CFC2CB /* IActivityReposity.swift in Sources */,
 				78F0E95F1AE1108300562E8D /* ActivityReposity.swift in Sources */,
 				78C37EC81AFAF69600C59556 /* PersonalInformationTableViewController.swift in Sources */,
@@ -510,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -546,7 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -557,13 +535,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = XHVolunteeriOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "XHVolunteeriOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -571,13 +553,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = XHVolunteeriOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "XHVolunteeriOS-Bridging-Header.h";
 			};
 			name = Release;
 		};

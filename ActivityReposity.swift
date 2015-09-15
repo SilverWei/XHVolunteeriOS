@@ -7,7 +7,7 @@
 //
 
 import Foundation
-let BaseUrlMActivity = "172.16.100.41:8080/MActivity"
+let BaseUrlMActivity = "172.16.101.94:8083/MActivity"
 
 func GetActivitiesData(postData :PullDownRequest) -> PtrResponse?
 {
@@ -161,6 +161,7 @@ func EndActivity(活动ID ActivityID:String) -> PullDownResult //结束活动
         let param = [
             "IndexId":ActivityID
         ]
+        println("ccccccccc:\(ActivityID)")
         let jsonparam = NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
         
         postRequest.HTTPBody = jsonparam
@@ -170,7 +171,7 @@ func EndActivity(活动ID ActivityID:String) -> PullDownResult //结束活动
             println(responsestr)
             
             var json = JSON(data: response)
-            Result = PullDownResult(PtrRequest: nil, ErrorMsg: json["ErrorMsg"].string!)
+            Result = PullDownResult(PtrRequest: nil, ErrorMsg: json["ErrorMsg"] != nil ? json["ErrorMsg"].string! : "null")
         }
     }
     return Result!
@@ -204,20 +205,19 @@ func GetActivityInfos(活动ID IndexId:Int) -> ActivityInfos  //获取活动详�
             
             var json = JSON(data: response)
             Response = ActivityInfos(IndexId: json["IndexId"].int!,
-                ActivityID: json["ActivityID"].string!,
-                ActivityName: json["ActivityName"].string!,
-                TeamName: json["TeamName"].string!,
-                UserName: json["UserName"].string!,
-                ActivityStartTime: json["ActivityStartTime"].string!,
-                ActivityEndTime: json["ActivityEndTime"].string!,
-                ActivityLocation: json["ActivityLocation"].string!,
-                ActivitySummary: json["ActivitySummary"].string!,
-                ActivityState: json["ActivityState"].string!,
+                ActivityID: json["ActivityID"] != nil ? json["ActivityID"].string! : "",
+                ActivityName: json["ActivityName"] != nil ? json["ActivityName"].string! : "",
+                TeamName: json["TeamName"] != nil ? json["TeamName"].string! : "",
+                UserName: json["UserName"] != nil ? json["UserName"].string! : "",
+                ActivityStartTime: json["ActivityStartTime"] != nil ? json["ActivityStartTime"].string! : "",
+                ActivityEndTime: json["ActivityEndTime"] != nil ? json["ActivityEndTime"].string! : "",
+                ActivityLocation: json["ActivityLocation"] != nil ? json["ActivityLocation"].string! : "",
+                ActivitySummary: json["ActivitySummary"] != nil ? json["ActivitySummary"].string! : "",
+                ActivityState: json["ActivityState"] != nil ? json["ActivityState"].string! : "",
                 ActivityAttend: json["ActivityAttend"].int!,
                 JoinCount: json["JoinCount"].int!,
                 Tick: json["Tick"].int!,
                 IsJoining: json["IsApply"].bool!)
-            
         }
     }
     return Response!

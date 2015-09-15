@@ -169,7 +169,6 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
         
         cell.ActivityNameLabel.text = ActivityOneCell.ActivityName
         cell.ActivityStartTimeLabel.text = "开始时间：" + DateTimeChange(ActivityOneCell.ActivityStartTime)
-        cell.ActivityEndTimeLabel.text = "结束时间：" + DateTimeChange(ActivityOneCell.ActivityEndTime)
         
         return cell
     }
