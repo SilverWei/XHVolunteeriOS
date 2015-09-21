@@ -29,8 +29,10 @@ class PersonalInformationTableViewController: UITableViewController {
             cell.UserNameUILabel.text = TeaPerImforDetail!.UserName
             cell.SexUILabel.text = TeaPerImforDetail!.Sex == true ? "男" : "女"
             cell.QQNumberUILabel.text = TeaPerImforDetail!.QQNumber
-
             cell.PhoneNumberUILabel.text = TeaPerImforDetail!.PhoneNumber
+            cell.UserPictureImage.image = TeaPerImforDetail!.UserPicture != "" ? UIImage(data: NSData(contentsOfURL: NSURL(string: TeaPerImforDetail!.UserPicture)!)!) : nil
+            cell.UserPictureImage.layer.masksToBounds = true
+            cell.UserPictureImage.layer.cornerRadius = 35
         }
         else
         {

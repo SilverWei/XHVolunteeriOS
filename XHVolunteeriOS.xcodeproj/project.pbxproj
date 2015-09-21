@@ -45,8 +45,11 @@
 		78F663E11AEF1883004B12C1 /* EditUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E01AEF1883004B12C1 /* EditUserCell.swift */; };
 		78F663E31AEF7987004B12C1 /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E21AEF7987004B12C1 /* UserIdentity.swift */; };
 		78F663E71AEF9211004B12C1 /* QRcodeShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E61AEF9211004B12C1 /* QRcodeShowViewController.swift */; };
+<<<<<<< HEAD
 		A25C8FF91BAFC51B00AB3434 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C8FF81BAFC51B00AB3434 /* SwiftyJSON.swift */; };
 		A25C8FFB1BAFC56600AB3434 /* RecruitActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C8FFA1BAFC56600AB3434 /* RecruitActivityTableViewController.swift */; };
+=======
+>>>>>>> WT
 		A26146AD1BAFA20400D4C152 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146AC1BAFA20400D4C152 /* MD5.swift */; };
 		A26146B41BAFA2D800D4C152 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146AE1BAFA2D800D4C152 /* MKButton.swift */; };
 		A26146B51BAFA2D800D4C152 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146AF1BAFA2D800D4C152 /* MKColor.swift */; };
@@ -56,6 +59,11 @@
 		A26146B91BAFA2D800D4C152 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146B31BAFA2D800D4C152 /* MKTextField.swift */; };
 		A26146BC1BAFA35600D4C152 /* ActivityReposity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146BA1BAFA35600D4C152 /* ActivityReposity.swift */; };
 		A26146BD1BAFA35600D4C152 /* UserReposity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146BB1BAFA35600D4C152 /* UserReposity.swift */; };
+<<<<<<< HEAD
+=======
+		A267D0BF1BAFB9EE000F0537 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267D0BE1BAFB9EE000F0537 /* SwiftyJSON.swift */; };
+		A267D0C11BAFBBA8000F0537 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267D0C01BAFBBA8000F0537 /* MKLabel.swift */; };
+>>>>>>> WT
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,9 +119,12 @@
 		78F663E01AEF1883004B12C1 /* EditUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserCell.swift; sourceTree = "<group>"; };
 		78F663E21AEF7987004B12C1 /* UserIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdentity.swift; sourceTree = "<group>"; };
 		78F663E61AEF9211004B12C1 /* QRcodeShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRcodeShowViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		A23A60B01BA7C7CE00B9AD95 /* XHVolunteeriOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XHVolunteeriOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		A25C8FF81BAFC51B00AB3434 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A25C8FFA1BAFC56600AB3434 /* RecruitActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecruitActivityTableViewController.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> WT
 		A26146AC1BAFA20400D4C152 /* MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		A26146AE1BAFA2D800D4C152 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		A26146AF1BAFA2D800D4C152 /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
@@ -123,7 +134,14 @@
 		A26146B31BAFA2D800D4C152 /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
 		A26146BA1BAFA35600D4C152 /* ActivityReposity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityReposity.swift; sourceTree = "<group>"; };
 		A26146BB1BAFA35600D4C152 /* UserReposity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReposity.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		A26146BE1BAFA38000D4C152 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
+=======
+		A267D0BC1BAFB913000F0537 /* XHVolunteeriOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XHVolunteeriOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		A267D0BD1BAFB9EE000F0537 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
+		A267D0BE1BAFB9EE000F0537 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		A267D0C01BAFBBA8000F0537 /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
+>>>>>>> WT
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +192,13 @@
 			children = (
 				7884EB831ADBA02500CC97F0 /* AppDelegate.swift */,
 				7884EB851ADBA02500CC97F0 /* ViewController.swift */,
+<<<<<<< HEAD
 				A26146BE1BAFA38000D4C152 /* SwiftyJSON.h */,
 				A25C8FF81BAFC51B00AB3434 /* SwiftyJSON.swift */,
+=======
+				A267D0BD1BAFB9EE000F0537 /* SwiftyJSON.h */,
+				A267D0BE1BAFB9EE000F0537 /* SwiftyJSON.swift */,
+>>>>>>> WT
 				7884EB8A1ADBA02500CC97F0 /* Images.xcassets */,
 				7884EBA31ADBC54D00CC97F0 /* Main.storyboard */,
 				7884EB8C1ADBA02500CC97F0 /* LaunchScreen.xib */,
@@ -216,6 +239,10 @@
 				A26146AF1BAFA2D800D4C152 /* MKColor.swift */,
 				A26146B01BAFA2D800D4C152 /* MKImageView.swift */,
 				A26146B11BAFA2D800D4C152 /* MKLayer.swift */,
+<<<<<<< HEAD
+=======
+				A267D0C01BAFBBA8000F0537 /* MKLabel.swift */,
+>>>>>>> WT
 				A26146B21BAFA2D800D4C152 /* MKTableViewCell.swift */,
 				A26146B31BAFA2D800D4C152 /* MKTextField.swift */,
 			);
@@ -296,7 +323,11 @@
 			isa = PBXGroup;
 			children = (
 				A26146AC1BAFA20400D4C152 /* MD5.swift */,
+<<<<<<< HEAD
 				A23A60B01BA7C7CE00B9AD95 /* XHVolunteeriOS-Bridging-Header.h */,
+=======
+				A267D0BC1BAFB913000F0537 /* XHVolunteeriOS-Bridging-Header.h */,
+>>>>>>> WT
 			);
 			name = MD5;
 			sourceTree = "<group>";
@@ -406,6 +437,10 @@
 				785104E71AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift in Sources */,
 				A26146BD1BAFA35600D4C152 /* UserReposity.swift in Sources */,
 				A26146B61BAFA2D800D4C152 /* MKImageView.swift in Sources */,
+<<<<<<< HEAD
+=======
+				78DEC8501ADCBA9300AC1846 /* RecruitActivityTableViewController.swift in Sources */,
+>>>>>>> WT
 				7884EB861ADBA02500CC97F0 /* ViewController.swift in Sources */,
 				A26146BC1BAFA35600D4C152 /* ActivityReposity.swift in Sources */,
 				78433E0D1AE4E86100D2E72F /* MainTabBarViewController.swift in Sources */,
@@ -435,7 +470,11 @@
 				A25C8FFB1BAFC56600AB3434 /* RecruitActivityTableViewController.swift in Sources */,
 				78CC75A61ADE552500CFC2CB /* EditUserInfo.swift in Sources */,
 				78C37ECA1AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift in Sources */,
+<<<<<<< HEAD
 				A25C8FF91BAFC51B00AB3434 /* SwiftyJSON.swift in Sources */,
+=======
+				A267D0BF1BAFB9EE000F0537 /* SwiftyJSON.swift in Sources */,
+>>>>>>> WT
 				78CC75A41ADE4FA800CFC2CB /* IUserReposity.swift in Sources */,
 				78F663DF1AEF0DF1004B12C1 /* GetUserCell.swift in Sources */,
 				7805AC061AF8525E00E9076D /* PageContentViewController.swift in Sources */,
@@ -444,6 +483,10 @@
 				78CC75A21ADE10A200CFC2CB /* IActivityReposity.swift in Sources */,
 				78C37EC81AFAF69600C59556 /* PersonalInformationTableViewController.swift in Sources */,
 				78D8BABA1AE7604900CBBA9A /* PtrUpdateData.swift in Sources */,
+<<<<<<< HEAD
+=======
+				A267D0C11BAFBBA8000F0537 /* MKLabel.swift in Sources */,
+>>>>>>> WT
 				A26146B41BAFA2D800D4C152 /* MKButton.swift in Sources */,
 				78CC75AC1ADE640A00CFC2CB /* PullDown.swift in Sources */,
 				78CC75A81ADE563500CFC2CB /* GetUserInfo.swift in Sources */,

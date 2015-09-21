@@ -33,8 +33,11 @@ class SettingTableViewController: UITableViewController {
             cell.TeamNameUILabel.text = UserDetail!.TeamName
             cell.QQNumberUILabel.text = UserDetail!.QQNumber
             cell.PersonalInfoUILabel.text = UserDetail!.PersonalInfo
-            cell.ActivityLongUILabel.text = UserDetail!.ActivityLong + "小时"
+            cell.ActivityLongUILabel.text = UserDetail!.ActivityLong + "分钟"
             cell.SexUILabel.text = UserDetail!.Sex == true ? "男" : "女"
+            cell.UserPictureImage.image = UserDetail!.UserPicture != "" ? UIImage(data: NSData(contentsOfURL: NSURL(string: UserDetail!.UserPicture)!)!) : nil
+            cell.UserPictureImage.layer.masksToBounds = true
+            cell.UserPictureImage.layer.cornerRadius = 35
         }
         else
         {

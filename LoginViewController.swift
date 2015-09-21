@@ -12,11 +12,11 @@ var Identity:UserIdentity?
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet var UserName: UITextField!
+    @IBOutlet var UserName: MKTextField!
     
-    @IBOutlet var UserPassword: UITextField!
+    @IBOutlet var UserPassword: MKTextField!
     
-    @IBOutlet var LoginButton: UIButton!
+    @IBOutlet var LoginButton: MKButton!
     
     let UserNameKey = ""
     let PwdKey = ""
@@ -25,6 +25,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        LoginButton.layer.shadowOpacity = 0.55
+        LoginButton.layer.shadowRadius = 5.0
+        LoginButton.layer.shadowColor = UIColor.grayColor().CGColor
+        
+        UserName.layer.borderColor = UIColor.clearColor().CGColor
+        UserName.floatingPlaceholderEnabled = true
+        UserName.placeholder = "用户名："
+        UserName.rippleLayerColor = UIColor.MKColor.LightBlue
+        UserName.tintColor = UIColor.MKColor.Blue
+        UserName.backgroundColor = UIColor(hex: 0xE0E0E0)
+        
+        UserPassword.layer.borderColor = UIColor.clearColor().CGColor
+        UserPassword.floatingPlaceholderEnabled = true
+        UserPassword.placeholder = "密码："
+        UserPassword.rippleLayerColor = UIColor.MKColor.LightBlue
+        UserPassword.tintColor = UIColor.MKColor.Blue
+        UserPassword.backgroundColor = UIColor(hex: 0xE0E0E0)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -35,7 +52,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     //读取上次登录信息
     func LastLogin()
@@ -74,8 +90,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func LoginOn()
     {
-        let pullDownResult:PullDownResult? = UserLogin(用户名: UserName.text,密码: UserPassword.text.md5())
-        
+        let pullDownResult:PullDownResult? = UserLogin(用户名: UserName.text,密码: UserPassword.text)
         if(pullDownResult != nil)
         {
             if(pullDownResult!.PtrRequest == ResultType.Success)
@@ -132,4 +147,3 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     
 }
-

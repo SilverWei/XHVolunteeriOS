@@ -12,7 +12,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
 
     var ActivityDetail:ActivityInfos!
     var indexId:Int!
-    @IBOutlet weak var MenuButton: UIButton!
+    @IBOutlet weak var MenuButton: MKButton!
     
     
     override func viewDidLoad() {
@@ -36,12 +36,14 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
         cell.UserNameLabel.text = ActivityDetail.UserName
         cell.JoinCountLabel.text = ActivityDetail.JoinCount.description + "/" + ActivityDetail.ActivityAttend.description
         cell.ActivityStartTimeLabel.text = DateTimeChange(ActivityDetail.ActivityStartTime)
+     //   cell.ActivityEndTimeLabel.text = DateTimeChange(ActivityDetail.ActivityEndTime)
         cell.ActivitySummaryLabel.text = ActivityDetail.ActivitySummary
         cell.TeamNameLabel.text = ActivityDetail.TeamName
         println(ActivityDetail.JoinCount)
         tableView.reloadData()
-        //学生隐藏菜单按钮
-        if(Identity == UserIdentity.MemberView && ActivityDetail.IsJoining == true)
+        println(ActivityDetail.ActivityState)
+        //隐藏菜单按钮
+        if((Identity == UserIdentity.MemberView && ActivityDetail.IsJoining == true) || ActivityDetail.ActivityState == "已结束")
         {
             MenuButton.hidden = true
         }
@@ -62,6 +64,10 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
             actionSheet.addButtonWithTitle("生成二维码")
             actionSheet.addButtonWithTitle("结束活动")
         }
+        else
+        {
+            actionSheet.addButtonWithTitle("加入活动")
+        }
 
 
         actionSheet.cancelButtonIndex = 0
@@ -70,33 +76,65 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
     }
 
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        println("右上角菜单:\(buttonIndex)")
+        println(buttonIndex)
         
         switch buttonIndex
         {
         case (1):
-            println("生成二维码")
-            QRcodeGet()
+            if(Identity == UserIdentity.TeacherView)
+            {
+                println("生成二维码")
+                QRcodeGet()
+            }
+            else
+            {
+                println("加入活动")
+                
+                var alert = UIAlertView()
+                alert.title = "提示"
+                alert.message = AddApply(ActivityDetail.ActivityID).ErrorMsg
+                alert.addButtonWithTitle("确认")
+                alert.show()
+                ActivityDetailShow()
+            }
         case (2):
             println("结束活动")
             
             var alert = UIAlertView()
             alert.title = "提示"
-            alert.message = EndActivity(活动ID: ActivityDetail.ActivityID).ErrorMsg
-            alert.addButtonWithTitle("确认")
+            alert.message = "是否结束此活动？"
+            alert.addButtonWithTitle("确定")
+            alert.addButtonWithTitle("取消")
+            alert.cancelButtonIndex = 1
+            alert.delegate = self
             alert.show()
-            ActivityDetailShow()
-        case (3):
-            println("加入活动")
+
+        default:
+            println("取消")
+        }
+    }
+    
+    func alertView(alertView:UIAlertView, clickedButtonAtIndex buttonIndex:Int)
+    {
+        if(buttonIndex == alertView.cancelButtonIndex)
+        {
+            println("点击了取消")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else
+        {
+            
+            println("点击了确认")
             
             var alert = UIAlertView()
             alert.title = "提示"
-            alert.message = AddApply(ActivityDetail.ActivityID).ErrorMsg
+            alert.message = EndActivity(活动ID: ActivityDetail.IndexId).ErrorMsg
             alert.addButtonWithTitle("确认")
             alert.show()
             ActivityDetailShow()
-        default:
-            println("取消")
+            
+            //隐藏右上角菜单
+            MenuButton.hidden = true
         }
     }
     

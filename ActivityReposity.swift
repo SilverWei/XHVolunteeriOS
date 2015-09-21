@@ -7,7 +7,7 @@
 //
 
 import Foundation
-let BaseUrlMActivity = "172.16.101.94:8083/MActivity"
+let BaseUrlMActivity = "172.16.100.41:8080/MActivity"
 
 func GetActivitiesData(postData :PullDownRequest) -> PtrResponse?
 {
@@ -82,7 +82,7 @@ func AddApply(ActivityID:String) -> PullDownResult //参加报名
             println(responsestr)
             
             var json = JSON(data: response)
-            Result = PullDownResult(PtrRequest: nil, ErrorMsg: json["ErrorMsg"].string!)
+            Result = PullDownResult(PtrRequest: nil, ErrorMsg: "您已加入此活动，请等待管理员审核！")
         }
     }
     return Result!
@@ -137,7 +137,6 @@ func TwoScanCode(ActivityID:String) -> ScanCodeResult //第二次刷二维码
         
         if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) {
             let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
-            println(responsestr)
             
             var json = JSON(data: response)
             Result = ScanCodeResult(request: ScanType(rawValue: json["request"].int!)!, Errormsg: json["Errormsg"].string, ActivityLong: json["ActivityLong"].int!, ActivityName: json["ActivityName"].string)
@@ -146,7 +145,7 @@ func TwoScanCode(ActivityID:String) -> ScanCodeResult //第二次刷二维码
     return Result!
 }
 
-func EndActivity(活动ID ActivityID:String) -> PullDownResult //结束活动
+func EndActivity(活动ID IndexId:Int) -> PullDownResult //结束活动
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "FinishActivity")
     var UserRole:String = ""
@@ -159,9 +158,8 @@ func EndActivity(活动ID ActivityID:String) -> PullDownResult //结束活动
         //postRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let param = [
-            "IndexId":ActivityID
+            "IndexId":IndexId
         ]
-        println("ccccccccc:\(ActivityID)")
         let jsonparam = NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
         
         postRequest.HTTPBody = jsonparam
@@ -171,7 +169,7 @@ func EndActivity(活动ID ActivityID:String) -> PullDownResult //结束活动
             println(responsestr)
             
             var json = JSON(data: response)
-            Result = PullDownResult(PtrRequest: nil, ErrorMsg: json["ErrorMsg"] != nil ? json["ErrorMsg"].string! : "null")
+            Result = PullDownResult(PtrRequest: nil, ErrorMsg: "您已结束此活动！")
         }
     }
     return Result!
@@ -200,6 +198,7 @@ func GetActivityInfos(活动ID IndexId:Int) -> ActivityInfos  //获取活动详�
         if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) {
             let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
             
+            println(responsestr)
             //////////////////////////////////////////
             // 解析返回的JSON数据
             

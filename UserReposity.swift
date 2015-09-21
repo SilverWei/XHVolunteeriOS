@@ -7,7 +7,8 @@
 //
 
 import Foundation
-var BaseUrlMUser = "172.16.101.94:8083/MUser"
+var BaseUrlMUser = "172.16.100.41:8080/MUser"
+var BaseUrl = "172.16.100.41:8080"
 
 func UserLogin(用户名 UserName:String, 密码 Password:String) -> PullDownResult? //登录
 {
@@ -78,7 +79,9 @@ func GetUserInfo() -> InfoOut? //获取用户信息
                 PersonalInfo: json["PersonalInfo"] != nil ? json["PersonalInfo"].string! : "",
                 ActivityLong: json["ActivityLong"].string!,
                 Sex: json["Sex"].bool!,
-                Tick: json["Tick"].int!)
+                Tick: json["Tick"].int!,
+                UserPicture: json["UserPicture"] != nil ? "http://" + BaseUrl + json["UserPicture"].string! : ""
+            )
         }
     }
     else

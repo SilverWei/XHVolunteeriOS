@@ -19,4 +19,5 @@ class GetUserCell: UITableView {
     @IBOutlet var ActivityLongUILabel:UILabel!
     @IBOutlet var SexUILabel:UILabel!
     @IBOutlet var TickUILabel:UILabel!
+    @IBOutlet var UserPictureImage: UIImageView!
 }

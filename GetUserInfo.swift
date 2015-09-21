@@ -28,8 +28,9 @@ class InfoOut: NSObject {
     var ActivityLong:String
     var Sex:Bool
     var Tick:Int
+    var UserPicture:String
 
-    init(UserID:String, UserName:String, UserRole:String, PhoneNumber:String, TeamName:String, QQNumber:String, PersonalInfo:String, ActivityLong:String, Sex:Bool, Tick:Int)
+    init(UserID:String, UserName:String, UserRole:String, PhoneNumber:String, TeamName:String, QQNumber:String, PersonalInfo:String, ActivityLong:String, Sex:Bool, Tick:Int, UserPicture:String)
     {
         self.UserID = UserID
         self.UserName = UserName
@@ -41,5 +42,6 @@ class InfoOut: NSObject {
         self.ActivityLong = ActivityLong
         self.Sex = Sex
         self.Tick = Tick
+        self.UserPicture = UserPicture
     }
 }

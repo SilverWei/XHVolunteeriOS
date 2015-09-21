@@ -19,4 +19,5 @@ class GetTeacherPerImfor: UITableView {
 
     @IBOutlet var SexUILabel:UILabel!
    
+    @IBOutlet var UserPictureImage: UIImageView!
 }
