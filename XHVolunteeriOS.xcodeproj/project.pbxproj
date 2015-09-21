@@ -33,7 +33,6 @@
 		78D8BAB81AE75F8B00CBBA9A /* UpdateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8BAB71AE75F8B00CBBA9A /* UpdateType.swift */; };
 		78D8BABA1AE7604900CBBA9A /* PtrUpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8BAB91AE7604900CBBA9A /* PtrUpdateData.swift */; };
 		78D8BABC1AE779AF00CBBA9A /* ActivityDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8BABB1AE779AF00CBBA9A /* ActivityDB.swift */; };
-		78DEC8501ADCBA9300AC1846 /* RecruitActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEC84F1ADCBA9300AC1846 /* RecruitActivityTableViewController.swift */; };
 		78DEC8521ADCBB5100AC1846 /* QRcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEC8511ADCBB5100AC1846 /* QRcodeViewController.swift */; };
 		78DEC8541ADCBC7C00AC1846 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEC8531ADCBC7C00AC1846 /* SettingTableViewController.swift */; };
 		78DEC8561ADCBF8F00AC1846 /* MyActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEC8551ADCBF8F00AC1846 /* MyActivityTableViewController.swift */; };
@@ -46,6 +45,8 @@
 		78F663E11AEF1883004B12C1 /* EditUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E01AEF1883004B12C1 /* EditUserCell.swift */; };
 		78F663E31AEF7987004B12C1 /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E21AEF7987004B12C1 /* UserIdentity.swift */; };
 		78F663E71AEF9211004B12C1 /* QRcodeShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F663E61AEF9211004B12C1 /* QRcodeShowViewController.swift */; };
+		A25C8FF91BAFC51B00AB3434 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C8FF81BAFC51B00AB3434 /* SwiftyJSON.swift */; };
+		A25C8FFB1BAFC56600AB3434 /* RecruitActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C8FFA1BAFC56600AB3434 /* RecruitActivityTableViewController.swift */; };
 		A26146AD1BAFA20400D4C152 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146AC1BAFA20400D4C152 /* MD5.swift */; };
 		A26146B41BAFA2D800D4C152 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146AE1BAFA2D800D4C152 /* MKButton.swift */; };
 		A26146B51BAFA2D800D4C152 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146AF1BAFA2D800D4C152 /* MKColor.swift */; };
@@ -55,7 +56,6 @@
 		A26146B91BAFA2D800D4C152 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146B31BAFA2D800D4C152 /* MKTextField.swift */; };
 		A26146BC1BAFA35600D4C152 /* ActivityReposity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146BA1BAFA35600D4C152 /* ActivityReposity.swift */; };
 		A26146BD1BAFA35600D4C152 /* UserReposity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146BB1BAFA35600D4C152 /* UserReposity.swift */; };
-		A26146C01BAFA38000D4C152 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26146BF1BAFA38000D4C152 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +99,6 @@
 		78D8BAB71AE75F8B00CBBA9A /* UpdateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateType.swift; sourceTree = "<group>"; };
 		78D8BAB91AE7604900CBBA9A /* PtrUpdateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtrUpdateData.swift; sourceTree = "<group>"; };
 		78D8BABB1AE779AF00CBBA9A /* ActivityDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDB.swift; sourceTree = "<group>"; };
-		78DEC84F1ADCBA9300AC1846 /* RecruitActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecruitActivityTableViewController.swift; path = XHVolunteeriOS/RecruitActivityTableViewController.swift; sourceTree = "<group>"; };
 		78DEC8511ADCBB5100AC1846 /* QRcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRcodeViewController.swift; path = XHVolunteeriOS/QRcodeViewController.swift; sourceTree = "<group>"; };
 		78DEC8531ADCBC7C00AC1846 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingTableViewController.swift; path = XHVolunteeriOS/SettingTableViewController.swift; sourceTree = "<group>"; };
 		78DEC8551ADCBF8F00AC1846 /* MyActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyActivityTableViewController.swift; path = XHVolunteeriOS/MyActivityTableViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +112,8 @@
 		78F663E21AEF7987004B12C1 /* UserIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdentity.swift; sourceTree = "<group>"; };
 		78F663E61AEF9211004B12C1 /* QRcodeShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRcodeShowViewController.swift; sourceTree = "<group>"; };
 		A23A60B01BA7C7CE00B9AD95 /* XHVolunteeriOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XHVolunteeriOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		A25C8FF81BAFC51B00AB3434 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		A25C8FFA1BAFC56600AB3434 /* RecruitActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecruitActivityTableViewController.swift; sourceTree = "<group>"; };
 		A26146AC1BAFA20400D4C152 /* MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		A26146AE1BAFA2D800D4C152 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		A26146AF1BAFA2D800D4C152 /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		A26146BA1BAFA35600D4C152 /* ActivityReposity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityReposity.swift; sourceTree = "<group>"; };
 		A26146BB1BAFA35600D4C152 /* UserReposity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReposity.swift; sourceTree = "<group>"; };
 		A26146BE1BAFA38000D4C152 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
-		A26146BF1BAFA38000D4C152 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +175,7 @@
 				7884EB831ADBA02500CC97F0 /* AppDelegate.swift */,
 				7884EB851ADBA02500CC97F0 /* ViewController.swift */,
 				A26146BE1BAFA38000D4C152 /* SwiftyJSON.h */,
-				A26146BF1BAFA38000D4C152 /* SwiftyJSON.swift */,
+				A25C8FF81BAFC51B00AB3434 /* SwiftyJSON.swift */,
 				7884EB8A1ADBA02500CC97F0 /* Images.xcassets */,
 				7884EBA31ADBC54D00CC97F0 /* Main.storyboard */,
 				7884EB8C1ADBA02500CC97F0 /* LaunchScreen.xib */,
@@ -234,7 +234,7 @@
 		78DEC8571ADCEDC600AC1846 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				78DEC84F1ADCBA9300AC1846 /* RecruitActivityTableViewController.swift */,
+				A25C8FFA1BAFC56600AB3434 /* RecruitActivityTableViewController.swift */,
 				78DEC8511ADCBB5100AC1846 /* QRcodeViewController.swift */,
 				78DEC8551ADCBF8F00AC1846 /* MyActivityTableViewController.swift */,
 				78DEC85A1ADCEEB200AC1846 /* ActivityDetailTableViewController.swift */,
@@ -406,7 +406,6 @@
 				785104E71AF7734300CF79D1 /* TeacherMainActivityTableViewController.swift in Sources */,
 				A26146BD1BAFA35600D4C152 /* UserReposity.swift in Sources */,
 				A26146B61BAFA2D800D4C152 /* MKImageView.swift in Sources */,
-				78DEC8501ADCBA9300AC1846 /* RecruitActivityTableViewController.swift in Sources */,
 				7884EB861ADBA02500CC97F0 /* ViewController.swift in Sources */,
 				A26146BC1BAFA35600D4C152 /* ActivityReposity.swift in Sources */,
 				78433E0D1AE4E86100D2E72F /* MainTabBarViewController.swift in Sources */,
@@ -433,9 +432,10 @@
 				78F663E11AEF1883004B12C1 /* EditUserCell.swift in Sources */,
 				78DEC8541ADCBC7C00AC1846 /* SettingTableViewController.swift in Sources */,
 				78F663E71AEF9211004B12C1 /* QRcodeShowViewController.swift in Sources */,
+				A25C8FFB1BAFC56600AB3434 /* RecruitActivityTableViewController.swift in Sources */,
 				78CC75A61ADE552500CFC2CB /* EditUserInfo.swift in Sources */,
 				78C37ECA1AFAF6E500C59556 /* EditPersonalInformationTableViewController.swift in Sources */,
-				A26146C01BAFA38000D4C152 /* SwiftyJSON.swift in Sources */,
+				A25C8FF91BAFC51B00AB3434 /* SwiftyJSON.swift in Sources */,
 				78CC75A41ADE4FA800CFC2CB /* IUserReposity.swift in Sources */,
 				78F663DF1AEF0DF1004B12C1 /* GetUserCell.swift in Sources */,
 				7805AC061AF8525E00E9076D /* PageContentViewController.swift in Sources */,
