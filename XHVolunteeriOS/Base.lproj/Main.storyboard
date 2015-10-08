@@ -265,7 +265,7 @@
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" image="QRcode" id="19j-1U-Ler">
                             <connections>
-                                <segue destination="TP6-CK-AML" kind="modal" id="65P-Kt-dNo"/>
+                                <segue destination="TP6-CK-AML" kind="presentation" id="65P-Kt-dNo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -293,18 +293,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vKC-Rx-qg0">
-                                                    <rect key="frame" x="8" y="8" width="70" height="70"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="FCy-Wr-IyC"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdg-o0-5HP">
                                                     <rect key="frame" x="88" y="57" width="279" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vKC-Rx-qg0">
+                                                    <rect key="frame" x="8" y="8" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="FCy-Wr-IyC"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Qdg-o0-5HP" secondAttribute="trailing" constant="8" id="48m-sB-YG9"/>
@@ -507,7 +507,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="DMZ-vG-IiU" kind="modal" id="7ub-eP-xQh"/>
+                                            <segue destination="DMZ-vG-IiU" kind="presentation" id="7ub-eP-xQh"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -535,7 +535,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="s0Y-n9-ljI" kind="modal" identifier="LoginOut" id="zWP-aT-ciX"/>
+                                            <segue destination="s0Y-n9-ljI" kind="presentation" identifier="LoginOut" id="zWP-aT-ciX"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -796,7 +796,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="s0Y-n9-ljI" kind="modal" id="sfp-Mm-6n8"/>
+                                    <segue destination="s0Y-n9-ljI" kind="presentation" id="sfp-Mm-6n8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -890,9 +890,9 @@
                         <outlet property="LoginButton" destination="Uj7-La-7sE" id="xaP-l9-57F"/>
                         <outlet property="UserName" destination="teV-XO-AGR" id="vRe-B8-mTA"/>
                         <outlet property="UserPassword" destination="9Xd-Ks-Abn" id="KFc-sJ-Nlv"/>
-                        <segue destination="uqG-Z1-dkh" kind="modal" identifier="MemberView" modalPresentationStyle="fullScreen" id="Pzi-m1-eVP"/>
-                        <segue destination="Wmc-o8-kcD" kind="modal" identifier="TeacherView" modalPresentationStyle="fullScreen" id="vH6-13-7zB"/>
-                        <segue destination="svZ-pI-8dR" kind="modal" identifier="GuideShow" id="zIU-v2-eHZ"/>
+                        <segue destination="uqG-Z1-dkh" kind="presentation" identifier="MemberView" id="Pzi-m1-eVP"/>
+                        <segue destination="Wmc-o8-kcD" kind="presentation" identifier="TeacherView" id="vH6-13-7zB"/>
+                        <segue destination="svZ-pI-8dR" kind="presentation" identifier="GuideShow" id="zIU-v2-eHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoR-1U-dma" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -917,25 +917,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fkU-Hd-jL0">
-                                                    <rect key="frame" x="8" y="8" width="70" height="70"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="rct-qK-WWH"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="***" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmn-Qc-0fo">
                                                     <rect key="frame" x="88" y="57" width="279" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fkU-Hd-jL0">
+                                                    <rect key="frame" x="8" y="8" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="rct-qK-WWH"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fkU-Hd-jL0" firstAttribute="leading" secondItem="uGg-Sz-lRE" secondAttribute="leadingMargin" id="3lm-lK-mZB"/>
                                                 <constraint firstAttribute="trailing" secondItem="Lmn-Qc-0fo" secondAttribute="trailing" constant="8" id="K5T-xw-5SV"/>
                                                 <constraint firstItem="fkU-Hd-jL0" firstAttribute="top" secondItem="uGg-Sz-lRE" secondAttribute="topMargin" id="fad-4K-puF"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="fkU-Hd-jL0" secondAttribute="bottom" id="o9G-Ig-daB"/>
-                                                <constraint firstItem="fkU-Hd-jL0" firstAttribute="centerX" secondItem="uGg-Sz-lRE" secondAttribute="centerX" constant="-144.5" id="osS-CS-AS2"/>
                                                 <constraint firstItem="Lmn-Qc-0fo" firstAttribute="leading" secondItem="uGg-Sz-lRE" secondAttribute="leading" constant="88" id="qGO-0t-qfc"/>
                                                 <constraint firstItem="Lmn-Qc-0fo" firstAttribute="top" secondItem="uGg-Sz-lRE" secondAttribute="top" constant="57" id="uI1-Re-jJ9"/>
                                             </constraints>
@@ -1051,7 +1050,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="2PV-Gd-KBB" kind="modal" id="3sF-vo-3oa"/>
+                                            <segue destination="2PV-Gd-KBB" kind="presentation" id="3sF-vo-3oa"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1079,7 +1078,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="s0Y-n9-ljI" kind="modal" identifier="PersonalLoginOut" id="WZc-eS-g75"/>
+                                            <segue destination="s0Y-n9-ljI" kind="presentation" identifier="PersonalLoginOut" id="WZc-eS-g75"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1489,8 +1488,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKn-UR-Z1o">
-                                                    <rect key="frame" x="8" y="8" width="367" height="113"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKn-UR-Z1o">
+                                                    <rect key="frame" x="8" y="8" width="367" height="112"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1735,6 +1734,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WZc-eS-g75"/>
-        <segue reference="15S-Gw-Bo6"/>
+        <segue reference="UEa-ga-Mu4"/>
     </inferredMetricsTieBreakers>
 </document>
