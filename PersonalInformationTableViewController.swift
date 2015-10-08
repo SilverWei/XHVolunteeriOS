@@ -22,7 +22,7 @@ class PersonalInformationTableViewController: UITableViewController {
 
     func TeaPerImformationShow()
     {
-        var TeaPerImforDetail:InfoOut? = GetUserInfo()
+        let TeaPerImforDetail:InfoOut? = GetUserInfo()
         if(TeaPerImforDetail != nil)
         {
             let cell = tableView.self as! GetTeacherPerImfor
@@ -46,7 +46,7 @@ class PersonalInformationTableViewController: UITableViewController {
         let EditPerImfoController = segue.sourceViewController as! EditPersonalInformationTableViewController
         
         let cell = EditPerImfoController.tableView.self as! EditTeaPerImfor
-        EditUser(性别: cell.SexSegmentedControl.selectedSegmentIndex == 0 ? true : false, 联系方式: cell.PhoneNumberTextField.text, QQ号: cell.QQNumberTextField.text, 个人简介: "")
+        EditUser(性别: cell.SexSegmentedControl.selectedSegmentIndex == 0 ? true : false, 联系方式: cell.PhoneNumberTextField.text!, QQ号: cell.QQNumberTextField.text!, 个人简介: "")
         
         TeaPerImformationShow()
         tableView.reloadData()
@@ -55,7 +55,7 @@ class PersonalInformationTableViewController: UITableViewController {
     
     func NetworkError()
     {
-        var alert = UIAlertView()
+        let alert = UIAlertView()
         alert.title = "错误"
         alert.message = "网络连接失败！"
         alert.addButtonWithTitle("确定")

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
+class MyActivityTableViewController: UITableViewController {
     
     var loadMoreText = UILabel()//用于显示上拉刷新提示
     let tableFooterView = UIView()//列表的底部，用于显示“上拉查看更多”的提示，当上拉后显示类容为“松开加载更多”。
@@ -23,7 +23,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
         super.viewDidLoad()
         
         //下拉刷新
-        var refreshControl = UIRefreshControl()
+        let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("sortArray"), forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新活动")
         self.refreshControl = refreshControl
@@ -73,7 +73,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
             page++
             
             self.initArr()
-            println("更新数据库")
+            print("更新数据库")
             self.tableView.reloadData()
         }
     }
@@ -90,7 +90,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
         Skip = 0
         ActivityLoad()
         
-        println("下拉刷新")
+        print("下拉刷新")
         tableView.reloadData()
         
         refreshControl?.endRefreshing()
@@ -103,12 +103,12 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
     //读取数据库附入数据列表
     func ActivityLoad()
     {
-        var ActivityAll:PtrResponse? = GetActivitiesData(PullDownRequest(ptrRequest: PtrRequest(Skip: Skip, Count: 10, LocalData: PtrUpdateParam(Id: nil, IndexId: nil, Tick: nil), Guid: ""), request: itemNumber))
+        let ActivityAll:PtrResponse? = GetActivitiesData(PullDownRequest(ptrRequest: PtrRequest(Skip: Skip, Count: 10, LocalData: PtrUpdateParam(Id: nil, IndexId: nil, Tick: nil), Guid: ""), request: itemNumber))
         if (ActivityAll != nil)
         {
             for i in 0..<ActivityAll!.updatedata.count
             {
-                var Activity = ActivityAll!.updatedata[i] as PtrUpdaeData!
+                let Activity = ActivityAll!.updatedata[i] as PtrUpdaeData!
                 
                 AllActivityDB.append(ActivityDB(IndexId: Activity.Data.IndexId,
                     ActivityName: Activity.Data.ActivityName,
@@ -148,7 +148,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
         case (2):
             itemNumber = RequestType.Leave
         default:
-            println("segmentDidchange错误！")
+            print("segmentDidchange错误！")
         }
         ActivityLoad()
         tableView.reloadData()
@@ -190,7 +190,7 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
 
     func NetworkError()
     {
-        var alert = UIAlertView()
+        let alert = UIAlertView()
         alert.title = "错误"
         alert.message = "网络连接失败！"
         alert.addButtonWithTitle("确定")
@@ -201,9 +201,9 @@ class MyActivityTableViewController: UITableViewController,UIScrollViewDelegate,
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowActivity" //进入数据详情页面 ShowActivity为storyboard的ldentifier标示
         {
-            println("显示详情")
+            print("显示详情")
             
-            if let indexPath = self.tableView.indexPathForSelectedRow()
+            if let indexPath = self.tableView.indexPathForSelectedRow
             {
                 let ActivityOneCell = AllActivityDB[indexPath.row] as ActivityDB
                 (segue.destinationViewController as! ActivityDetailTableViewController).indexId = ActivityOneCell.IndexId

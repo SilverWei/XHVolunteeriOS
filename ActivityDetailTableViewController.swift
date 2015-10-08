@@ -39,9 +39,9 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
      //   cell.ActivityEndTimeLabel.text = DateTimeChange(ActivityDetail.ActivityEndTime)
         cell.ActivitySummaryLabel.text = ActivityDetail.ActivitySummary
         cell.TeamNameLabel.text = ActivityDetail.TeamName
-        println(ActivityDetail.JoinCount)
+        print(ActivityDetail.JoinCount)
         tableView.reloadData()
-        println(ActivityDetail.ActivityState)
+        print(ActivityDetail.ActivityState)
         //隐藏菜单按钮
         if((Identity == UserIdentity.MemberView && ActivityDetail.IsJoining == true) || ActivityDetail.ActivityState == "已结束")
         {
@@ -57,7 +57,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
     
     //右上角弹出菜单内容
     @IBAction func ActivityMenu(sender: UIButton) {
-        var actionSheet = UIActionSheet()
+        let actionSheet = UIActionSheet()
         actionSheet.addButtonWithTitle("取消")
         if(Identity == UserIdentity.TeacherView)
         {
@@ -76,21 +76,21 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
     }
 
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        println(buttonIndex)
+        print(buttonIndex)
         
         switch buttonIndex
         {
         case (1):
             if(Identity == UserIdentity.TeacherView)
             {
-                println("生成二维码")
+                print("生成二维码")
                 QRcodeGet()
             }
             else
             {
-                println("加入活动")
+                print("加入活动")
                 
-                var alert = UIAlertView()
+                let alert = UIAlertView()
                 alert.title = "提示"
                 alert.message = AddApply(ActivityDetail.ActivityID).ErrorMsg
                 alert.addButtonWithTitle("确认")
@@ -98,9 +98,9 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
                 ActivityDetailShow()
             }
         case (2):
-            println("结束活动")
+            print("结束活动")
             
-            var alert = UIAlertView()
+            let alert = UIAlertView()
             alert.title = "提示"
             alert.message = "是否结束此活动？"
             alert.addButtonWithTitle("确定")
@@ -110,7 +110,7 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
             alert.show()
 
         default:
-            println("取消")
+            print("取消")
         }
     }
     
@@ -118,15 +118,15 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
     {
         if(buttonIndex == alertView.cancelButtonIndex)
         {
-            println("点击了取消")
+            print("点击了取消")
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         else
         {
             
-            println("点击了确认")
+            print("点击了确认")
             
-            var alert = UIAlertView()
+            let alert = UIAlertView()
             alert.title = "提示"
             alert.message = EndActivity(活动ID: ActivityDetail.IndexId).ErrorMsg
             alert.addButtonWithTitle("确认")

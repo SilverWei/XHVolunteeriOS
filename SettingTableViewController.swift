@@ -24,7 +24,7 @@ class SettingTableViewController: UITableViewController {
 
     func UserDetailShow()
     {
-        var UserDetail:InfoOut? = GetUserInfo()
+        let UserDetail:InfoOut? = GetUserInfo()
         if(UserDetail != nil)
         {
             let cell = tableView.self as! GetUserCell
@@ -50,15 +50,15 @@ class SettingTableViewController: UITableViewController {
     {
         let EditUserController = segue.sourceViewController as! SettingEditTableViewController //调用SettingEditTableViewController页面
         let cell = EditUserController.tableView.self as! EditUserCell
-        EditUser(性别: cell.SexSegmentedControl.selectedSegmentIndex == 0 ? true : false, 联系方式: cell.PhoneNumberTextField.text, QQ号: cell.QQNumberTextField.text, 个人简介: cell.PersonalInfoTextField.text)
-        println("修改完成")
+        EditUser(性别: cell.SexSegmentedControl.selectedSegmentIndex == 0 ? true : false, 联系方式: cell.PhoneNumberTextField.text!, QQ号: cell.QQNumberTextField.text!, 个人简介: cell.PersonalInfoTextField.text)
+        print("修改完成")
         UserDetailShow()
         tableView.reloadData()
     }
     
     func NetworkError()
     {
-        var alert = UIAlertView()
+        let alert = UIAlertView()
         alert.title = "错误"
         alert.message = "网络连接失败！"
         alert.addButtonWithTitle("确定")

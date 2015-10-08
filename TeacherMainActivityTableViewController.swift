@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeacherMainActivityTableViewController: UITableViewController,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
+class TeacherMainActivityTableViewController: UITableViewController {
     
     var loadMoreText = UILabel()
     let tableFooterView = UIView()
@@ -22,7 +22,7 @@ class TeacherMainActivityTableViewController: UITableViewController,UIScrollView
         super.viewDidLoad()
         
         //下拉刷新
-        var  refreshControl = UIRefreshControl()
+        let  refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("sortArray"), forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新活动")
         self.refreshControl = refreshControl
@@ -45,7 +45,7 @@ class TeacherMainActivityTableViewController: UITableViewController,UIScrollView
         AllActivityDB = []
         Skip = 0
         ActivityLoad()
-        println("下来刷新")
+        print("下来刷新")
         tableView.reloadData()
         
         refreshControl?.endRefreshing()
@@ -84,7 +84,7 @@ class TeacherMainActivityTableViewController: UITableViewController,UIScrollView
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 30){
             page++
             self.initArr()
-            print("更新数据")
+            print("更新数据", terminator: "")
             self.tableView.reloadData()
             
         }
@@ -96,13 +96,13 @@ class TeacherMainActivityTableViewController: UITableViewController,UIScrollView
     }
     
     func ActivityLoad(){
-        var ActivityAll:PtrResponse? = GetActivitiesData(PullDownRequest(ptrRequest: PtrRequest(Skip: Skip, Count: 10, LocalData: PtrUpdateParam(Id: nil, IndexId: nil, Tick: nil), Guid: ""), request: itemNumber))
+        let ActivityAll:PtrResponse? = GetActivitiesData(PullDownRequest(ptrRequest: PtrRequest(Skip: Skip, Count: 10, LocalData: PtrUpdateParam(Id: nil, IndexId: nil, Tick: nil), Guid: ""), request: itemNumber))
         if(ActivityAll != nil)
         {
            for i in 0..<ActivityAll!.updatedata.count
            {
             
-                var Activity = ActivityAll!.updatedata[i] as PtrUpdaeData!
+                let Activity = ActivityAll!.updatedata[i] as PtrUpdaeData!
                 
                 AllActivityDB.append(ActivityDB(IndexId:Activity.Data.IndexId , ActivityName: Activity.Data.ActivityName, TeamName: Activity.Data.TeamName, UserName: Activity.Data.UserName, ActivityStartTime: Activity.Data.ActivityStartTime, ActivityEndTime: Activity.Data.ActivityEndTime, ActivityLocation: Activity.Data.ActivityLocation, ActivitySummary: Activity.Data.ActivitySummary, ActivityState: Activity.Data.ActivityState, ActivityAttend: Activity.Data.ActivityAttend, JoinCount: Activity.Data.JoinCount, Tick: Activity.Data.Tick, IsJoining: Activity.Data.IsJoining, Id: Activity.Data.Id))
             }
@@ -139,7 +139,7 @@ class TeacherMainActivityTableViewController: UITableViewController,UIScrollView
     
     func NetworkError()
     {
-        var alert = UIAlertView()
+        let alert = UIAlertView()
         alert.title = "错误"
         alert.message = "网络连接失败！"
         alert.addButtonWithTitle("确定")
@@ -149,7 +149,7 @@ class TeacherMainActivityTableViewController: UITableViewController,UIScrollView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "ShowActivityDetail")
         {
-            if let index = self.tableView.indexPathForSelectedRow()
+            if let index = self.tableView.indexPathForSelectedRow
             {
                 let ActivityOneCell = AllActivityDB[index.row] as ActivityDB
                 

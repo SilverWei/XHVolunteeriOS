@@ -63,12 +63,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //判断是否第一次启动：
         if((NSUserDefaults.standardUserDefaults().boolForKey("IsFirstLaunch") as Bool!) == false){
             //第一次启动，播放引导页面
-            println("第一次启动")
+            print("第一次启动")
             self.performSegueWithIdentifier("GuideShow", sender: self)
             //设置为非第一次启动
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "IsFirstLaunch")
         }else{
-            println("不是第一次启动")
+            print("不是第一次启动")
             if((self.UserPassword.text) != "")
             {
                 UserLoginButton(LoginButton)
@@ -90,7 +90,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func LoginOn()
     {
-        let pullDownResult:PullDownResult? = UserLogin(用户名: UserName.text,密码: UserPassword.text)
+        let pullDownResult:PullDownResult? = UserLogin(用户名: UserName.text!,密码: UserPassword.text!)
         if(pullDownResult != nil)
         {
             if(pullDownResult!.PtrRequest == ResultType.Success)
@@ -108,7 +108,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             else
             {
-                var alert = UIAlertView()
+                let alert = UIAlertView()
                 alert.title = "错误"
                 alert.message = pullDownResult!.ErrorMsg
                 alert.addButtonWithTitle("取消")
@@ -117,7 +117,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         else
         {
-            var alert = UIAlertView()
+            let alert = UIAlertView()
             alert.title = "错误"
             alert.message = "网络连接失败！"
             alert.addButtonWithTitle("确定")
@@ -127,7 +127,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         //收起键盘
         UserName.resignFirstResponder()
         UserPassword.resignFirstResponder()

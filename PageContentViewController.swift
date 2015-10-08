@@ -19,7 +19,7 @@ class PageContentViewController: UIViewController, UIScrollViewDelegate {
         ["pic":"third"]
     ]
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -43,10 +43,9 @@ class PageContentViewController: UIViewController, UIScrollViewDelegate {
         PageImagesView.pagingEnabled = true
         //添加页面到滚动面板里
         let size = PageImagesView.bounds.size
-        for (seq,course) in enumerate(courses) {
-            var page = UIView()
+        for (seq,course) in courses.enumerate() {
+            let page = UIView()
             
-            var images:UIImage = UIImage(named: course["pic"]!)!
             page.backgroundColor = UIColor(patternImage:UIImage(named:course["pic"]!)!)
             
             page.frame = CGRect(x: CGFloat(seq) * size.width, y: 0, width: PageImagesView.bounds.size.width, height: PageImagesView.bounds.size.height)

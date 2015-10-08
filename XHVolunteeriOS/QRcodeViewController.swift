@@ -26,11 +26,17 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         
         let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         var error:NSError?
-        let input:AnyObject! = AVCaptureDeviceInput.deviceInputWithDevice(captureDevice, error: &error)
+        let input:AnyObject!
+        do {
+            input = try AVCaptureDeviceInput(device: captureDevice)
+        } catch let error1 as NSError {
+            error = error1
+            input = nil
+        }
         
         if(error != nil)
         {
-            println("\(error?.localizedDescription)")
+            print("\(error?.localizedDescription)")
             return
         }
         
@@ -46,7 +52,7 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
         videoPreviewLayer?.frame = QRView.layer.bounds
-        QRView.layer.addSublayer(videoPreviewLayer)
+        QRView.layer.addSublayer(videoPreviewLayer!)
         
         captureSession?.startRunning()
         
@@ -87,10 +93,10 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 captureSession?.stopRunning()
                 
                 //数据传输
-                var ScanRequest = ScanCode(metadataObj.stringValue)
+                let ScanRequest = ScanCode(metadataObj.stringValue)
                 if(ScanRequest.request == ScanType.First) //第一次扫描
                 {
-                    var alert = UIAlertView()
+                    let alert = UIAlertView()
                     alert.title = "提示"
                     alert.message = "活动签到成功！"
                     alert.addButtonWithTitle("确定")
@@ -99,9 +105,9 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 }
                 else if(ScanRequest.request == ScanType.Second) //第二次扫描
                 {
-                    println(ScanRequest.ActivityName)
+                    print(ScanRequest.ActivityName)
                     
-                    var alert = UIAlertView()
+                    let alert = UIAlertView()
                     alert.title = "是否完结当前参与的活动"
                     alert.message = "当前参与的活动为\"" + ScanRequest.ActivityName! + "\"，累计时长为\(ScanRequest.ActivityLong)分钟。"
                     alert.addButtonWithTitle("确定")
@@ -113,7 +119,7 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 }
                 else if(ScanRequest.request == ScanType.Error)
                 {
-                    var alert = UIAlertView()
+                    let alert = UIAlertView()
                     alert.title = "错误"
                     alert.message = ScanRequest.Errormsg
                     alert.addButtonWithTitle("确定")
@@ -130,18 +136,18 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     {
         if(buttonIndex == alertView.cancelButtonIndex)
         {
-            println("点击了取消")
+            print("点击了取消")
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         else
         {
             
-            println("点击了确认")
+            print("点击了确认")
             
-            var TwoScanRequest = TwoScanCode(ActivityID)
+            let TwoScanRequest = TwoScanCode(ActivityID)
             if(TwoScanRequest.request == ScanType.Error)
             {
-                var alert = UIAlertView()
+                let alert = UIAlertView()
                 alert.title = "提示"
                 alert.message = TwoScanRequest.Errormsg
                 alert.addButtonWithTitle("确定")
@@ -150,7 +156,7 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             }
             else
             {
-                var alert = UIAlertView()
+                let alert = UIAlertView()
                 alert.title = "提示"
                 alert.message = "您已完结本活动！"
                 alert.addButtonWithTitle("确定")

@@ -13,10 +13,9 @@ var BaseUrl = "172.16.100.41:8080"
 func UserLogin(用户名 UserName:String, 密码 Password:String) -> PullDownResult? //登录
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMUser , "Login")
-    var UserRole:String = ""
-    var pullDownResult = PullDownResult(PtrRequest: ResultType.Error, ErrorMsg: "")
+    let pullDownResult = PullDownResult(PtrRequest: ResultType.Error, ErrorMsg: "")
     
-
+    
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
         postRequest.timeoutInterval = 3.0
@@ -27,12 +26,12 @@ func UserLogin(用户名 UserName:String, 密码 Password:String) -> PullDownRes
             "UserName":UserName,
             "Password":Password
         ]
-        let jsonparam = NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
-
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        
         postRequest.HTTPBody = jsonparam
-        if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) {
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
             let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
-            println(responsestr)
+            print(responsestr)
             
             let json = JSON(data: response)
             if let userResultType = json["Type"].int
@@ -43,7 +42,7 @@ func UserLogin(用户名 UserName:String, 密码 Password:String) -> PullDownRes
             {
                 pullDownResult.ErrorMsg = userRole
             }
-
+            
         }
         else
         {
@@ -56,7 +55,6 @@ func UserLogin(用户名 UserName:String, 密码 Password:String) -> PullDownRes
 func GetUserInfo() -> InfoOut? //获取用户信息
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMUser , "GetUserInfo")
-    var UserRole:String = ""
     var UserInfo:InfoOut?
     
     if let url = NSURL(string: urlStr as String) {
@@ -65,9 +63,9 @@ func GetUserInfo() -> InfoOut? //获取用户信息
         postRequest.HTTPMethod = "POST"
         //postRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) {
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
             let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
-            println(responsestr)
+            print(responsestr)
             
             let json = JSON(data: response)
             UserInfo = InfoOut(UserID: json["UserID"].string!,
@@ -88,15 +86,13 @@ func GetUserInfo() -> InfoOut? //获取用户信息
     {
         return nil
     }
-
+    
     return UserInfo
 }
 
 func EditUser(性别 Sex:Bool, 联系方式 PhoneNumber:String, QQ号 QQNumber:String, 个人简介 PersonalInfo:String) //编辑用户信息
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMUser , "EditUserInfo")
-    var UserRole:String = ""
-    var UserEdit:EditOut?
     
     if let url = NSURL(string: urlStr as String) {
         let postRequest = NSMutableURLRequest(URL: url)
@@ -110,13 +106,13 @@ func EditUser(性别 Sex:Bool, 联系方式 PhoneNumber:String, QQ号 QQNumber:S
             "QQNumber":QQNumber,
             "PersonalInfo":PersonalInfo
         ]
-        let jsonparam = NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
         
         postRequest.HTTPBody = jsonparam
         
-        if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) {
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
             let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
-            println(responsestr)
+            print(responsestr)
         }
     }
 }

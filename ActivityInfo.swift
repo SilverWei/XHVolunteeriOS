@@ -27,22 +27,22 @@ class ActivityInfos: NSObject {
     /**
     ActivityInfo
     
-    :param: IndexId           序号
-    :param: ActivityID        活动管理号
-    :param: ActivityName
-    :param: TeamName          组别名称
-    :param: UserName          发布者用户名称
-    :param: ActivityStartTime 活动开始时间
-    :param: ActivityEndTime   活动结束时间
-    :param: ActivityLocation  活动举行地点
-    :param: ActivitySummary   活动简介
-    :param: ActivityState     活动状态
-    :param: ActivityAttend    参加人数
-    :param: JoinCount         以报人数
-    :param: Tick              时间戳
-    :param: IsJoining         是否开放
+    - parameter IndexId:           序号
+    - parameter ActivityID:        活动管理号
+    - parameter ActivityName:
+    - parameter TeamName:          组别名称
+    - parameter UserName:          发布者用户名称
+    - parameter ActivityStartTime: 活动开始时间
+    - parameter ActivityEndTime:   活动结束时间
+    - parameter ActivityLocation:  活动举行地点
+    - parameter ActivitySummary:   活动简介
+    - parameter ActivityState:     活动状态
+    - parameter ActivityAttend:    参加人数
+    - parameter JoinCount:         以报人数
+    - parameter Tick:              时间戳
+    - parameter IsJoining:         是否开放
     
-    :returns:
+    - returns:
     */
     init(IndexId:Int, ActivityID:String, ActivityName:String, TeamName:String, UserName:String, ActivityStartTime:String, ActivityEndTime:String, ActivityLocation:String, ActivitySummary:String, ActivityState:String, ActivityAttend:Int, JoinCount:Int, Tick:Int, IsJoining:Bool)
     {

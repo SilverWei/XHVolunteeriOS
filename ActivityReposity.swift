@@ -12,8 +12,7 @@ let BaseUrlMActivity = "172.16.100.41:8080/MActivity"
 func GetActivitiesData(postData :PullDownRequest) -> PtrResponse?
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "GetActivitiesByPage") //GetActivitiesByPage是web端接口
-    var UserRole:String = ""
-    var param = PullDownRequest(ptrRequest: PtrRequest(Skip: postData.ptrRequest.Skip, Count: 10, LocalData: PtrUpdateParam(Id: nil, IndexId: nil, Tick: nil), Guid: ""), request: postData.request) //请求的数据模型
+    let param = PullDownRequest(ptrRequest: PtrRequest(Skip: postData.ptrRequest.Skip, Count: 10, LocalData: PtrUpdateParam(Id: nil, IndexId: nil, Tick: nil), Guid: ""), request: postData.request) //请求的数据模型
     var Response:PtrResponse? //返回值的定义
     
     if let url = NSURL(string: urlStr as String) {
@@ -23,7 +22,7 @@ func GetActivitiesData(postData :PullDownRequest) -> PtrResponse?
         
         postRequest.HTTPBody = "{ptrRequest:{\"Skip\":\(param.ptrRequest.Skip),\"Count\":\(param.ptrRequest.Count),\"LocalData\":[],\"Guid\":\"\"},request:\"\(param.request.hashValue)\"}".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) //param数据转换为json格式发出请求
         
-        if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) { //JSON返回数据
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) { //JSON返回数据
             
             //////////////////////////////////////////
             // 解析返回的JSON数据
@@ -61,7 +60,7 @@ func GetActivitiesData(postData :PullDownRequest) -> PtrResponse?
 func AddApply(ActivityID:String) -> PullDownResult //参加报名
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "JoinActivity")
-    var UserRole:String = ""
+    //    var UserRole:String = ""
     var Result:PullDownResult?
     
     if let url = NSURL(string: urlStr as String) {
@@ -73,15 +72,13 @@ func AddApply(ActivityID:String) -> PullDownResult //参加报名
         let param = [
             "ActivityID":ActivityID
         ]
-        let jsonparam = NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
         
         postRequest.HTTPBody = jsonparam
         
-        if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) {
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
             let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
-            println(responsestr)
-            
-            var json = JSON(data: response)
+            print(responsestr)
             Result = PullDownResult(PtrRequest: nil, ErrorMsg: "您已加入此活动，请等待管理员审核！")
         }
     }
@@ -90,7 +87,6 @@ func AddApply(ActivityID:String) -> PullDownResult //参加报名
 func ScanCode(ActivityID:String) -> ScanCodeResult //首次刷二维码
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "ScanCode")
-    var UserRole:String = ""
     var Result:ScanCodeResult?
     
     if let url = NSURL(string: urlStr as String) {
@@ -102,13 +98,13 @@ func ScanCode(ActivityID:String) -> ScanCodeResult //首次刷二维码
         let param = [
             "ScanRequest":ActivityID
         ]
-        let jsonparam = NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
         
         postRequest.HTTPBody = jsonparam
         
-        if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) {
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
             let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
-            println(responsestr)
+            print(responsestr)
             
             var json = JSON(data: response)
             Result = ScanCodeResult(request: ScanType(rawValue: json["request"].int!)!, Errormsg: json["Errormsg"].string, ActivityLong: json["ActivityLong"].int!, ActivityName: json["ActivityName"].string)
@@ -119,7 +115,6 @@ func ScanCode(ActivityID:String) -> ScanCodeResult //首次刷二维码
 func TwoScanCode(ActivityID:String) -> ScanCodeResult //第二次刷二维码
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "TwoScanCode")
-    var UserRole:String = ""
     var Result:ScanCodeResult?
     
     if let url = NSURL(string: urlStr as String) {
@@ -131,12 +126,11 @@ func TwoScanCode(ActivityID:String) -> ScanCodeResult //第二次刷二维码
         let param = [
             "ScanRequest":ActivityID
         ]
-        let jsonparam = NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
         
         postRequest.HTTPBody = jsonparam
         
-        if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) {
-            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
             
             var json = JSON(data: response)
             Result = ScanCodeResult(request: ScanType(rawValue: json["request"].int!)!, Errormsg: json["Errormsg"].string, ActivityLong: json["ActivityLong"].int!, ActivityName: json["ActivityName"].string)
@@ -148,7 +142,6 @@ func TwoScanCode(ActivityID:String) -> ScanCodeResult //第二次刷二维码
 func EndActivity(活动ID IndexId:Int) -> PullDownResult //结束活动
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "FinishActivity")
-    var UserRole:String = ""
     var Result:PullDownResult?
     
     if let url = NSURL(string: urlStr as String) {
@@ -160,15 +153,13 @@ func EndActivity(活动ID IndexId:Int) -> PullDownResult //结束活动
         let param = [
             "IndexId":IndexId
         ]
-        let jsonparam = NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
         
         postRequest.HTTPBody = jsonparam
         
-        if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) {
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
             let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
-            println(responsestr)
-            
-            var json = JSON(data: response)
+            print(responsestr)
             Result = PullDownResult(PtrRequest: nil, ErrorMsg: "您已结束此活动！")
         }
     }
@@ -178,7 +169,6 @@ func EndActivity(活动ID IndexId:Int) -> PullDownResult //结束活动
 func GetActivityInfos(活动ID IndexId:Int) -> ActivityInfos  //获取活动详细最新信息
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "GetActivity")
-    var UserRole:String = ""
     var Response:ActivityInfos?
     
     if let url = NSURL(string: urlStr as String) {
@@ -191,14 +181,14 @@ func GetActivityInfos(活动ID IndexId:Int) -> ActivityInfos  //获取活动详�
             "IndexId":IndexId,
             "tick":"635642848287116232"
         ]
-        let jsonparam = NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
         
         postRequest.HTTPBody = jsonparam
         
-        if let response = NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil, error: nil) {
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
             let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
             
-            println(responsestr)
+            print(responsestr)
             //////////////////////////////////////////
             // 解析返回的JSON数据
             
