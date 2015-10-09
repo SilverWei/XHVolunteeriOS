@@ -84,7 +84,7 @@ func AddApply(ActivityID:String) -> PullDownResult //参加报名
     }
     return Result!
 }
-func ScanCode(ActivityID:String) -> ScanCodeResult //首次刷二维码
+func ScanCode(ActivityID:String) -> ScanCodeResult? //首次刷二维码
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "ScanCode")
     var Result:ScanCodeResult?
@@ -109,10 +109,14 @@ func ScanCode(ActivityID:String) -> ScanCodeResult //首次刷二维码
             var json = JSON(data: response)
             Result = ScanCodeResult(request: ScanType(rawValue: json["request"].int!)!, Errormsg: json["Errormsg"].string, ActivityLong: json["ActivityLong"].int!, ActivityName: json["ActivityName"].string)
         }
+        else
+        {
+            return nil
+        }
     }
     return Result!
 }
-func TwoScanCode(ActivityID:String) -> ScanCodeResult //第二次刷二维码
+func TwoScanCode(ActivityID:String) -> ScanCodeResult? //第二次刷二维码
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "TwoScanCode")
     var Result:ScanCodeResult?
@@ -134,6 +138,10 @@ func TwoScanCode(ActivityID:String) -> ScanCodeResult //第二次刷二维码
             
             var json = JSON(data: response)
             Result = ScanCodeResult(request: ScanType(rawValue: json["request"].int!)!, Errormsg: json["Errormsg"].string, ActivityLong: json["ActivityLong"].int!, ActivityName: json["ActivityName"].string)
+        }
+        else
+        {
+            return nil
         }
     }
     return Result!
@@ -166,7 +174,7 @@ func EndActivity(活动ID IndexId:Int) -> PullDownResult //结束活动
     return Result!
 }
 
-func GetActivityInfos(活动ID IndexId:Int) -> ActivityInfos  //获取活动详细最新信息
+func GetActivityInfos(活动ID IndexId:Int) -> ActivityInfos?  //获取活动详细最新信息
 {
     let urlStr = NSString(format: "http://%@/%@", BaseUrlMActivity , "GetActivity")
     var Response:ActivityInfos?
@@ -207,6 +215,10 @@ func GetActivityInfos(活动ID IndexId:Int) -> ActivityInfos  //获取活动详�
                 JoinCount: json["JoinCount"].int!,
                 Tick: json["Tick"].int!,
                 IsJoining: json["IsApply"].bool!)
+        }
+        else
+        {
+            return nil
         }
     }
     return Response!

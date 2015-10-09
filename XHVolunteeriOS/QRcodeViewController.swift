@@ -94,39 +94,50 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 
                 //数据传输
                 let ScanRequest = ScanCode(metadataObj.stringValue)
-                if(ScanRequest.request == ScanType.First) //第一次扫描
+                if(ScanRequest != nil)
                 {
-                    let alert = UIAlertView()
-                    alert.title = "提示"
-                    alert.message = "活动签到成功！"
-                    alert.addButtonWithTitle("确定")
-                    alert.show()
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    if(ScanRequest!.request == ScanType.First) //第一次扫描
+                    {
+                        let alert = UIAlertView()
+                        alert.title = "提示"
+                        alert.message = "活动签到成功！"
+                        alert.addButtonWithTitle("确定")
+                        alert.show()
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    else if(ScanRequest!.request == ScanType.Second) //第二次扫描
+                    {
+                        print(ScanRequest!.ActivityName)
+                        
+                        let alert = UIAlertView()
+                        alert.title = "是否完结当前参与的活动"
+                        alert.message = "当前参与的活动为\"" + ScanRequest!.ActivityName! + "\"，累计时长为\(ScanRequest!.ActivityLong)分钟。"
+                        alert.addButtonWithTitle("确定")
+                        alert.addButtonWithTitle("取消")
+                        alert.cancelButtonIndex = 1
+                        alert.delegate = self
+                        alert.show()
+                        //    self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    else if(ScanRequest!.request == ScanType.Error)
+                    {
+                        let alert = UIAlertView()
+                        alert.title = "错误"
+                        alert.message = ScanRequest!.Errormsg
+                        alert.addButtonWithTitle("确定")
+                        alert.show()
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
                 }
-                else if(ScanRequest.request == ScanType.Second) //第二次扫描
-                {
-                    print(ScanRequest.ActivityName)
-                    
-                    let alert = UIAlertView()
-                    alert.title = "是否完结当前参与的活动"
-                    alert.message = "当前参与的活动为\"" + ScanRequest.ActivityName! + "\"，累计时长为\(ScanRequest.ActivityLong)分钟。"
-                    alert.addButtonWithTitle("确定")
-                    alert.addButtonWithTitle("取消")
-                    alert.cancelButtonIndex = 1
-                    alert.delegate = self
-                    alert.show()
-                //    self.dismissViewControllerAnimated(true, completion: nil)
-                }
-                else if(ScanRequest.request == ScanType.Error)
+                else
                 {
                     let alert = UIAlertView()
                     alert.title = "错误"
-                    alert.message = ScanRequest.Errormsg
+                    alert.message = "网络连接失败，请稍后重试"
                     alert.addButtonWithTitle("确定")
                     alert.show()
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }
-
             }
         }
 
@@ -145,20 +156,32 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             print("点击了确认")
             
             let TwoScanRequest = TwoScanCode(ActivityID)
-            if(TwoScanRequest.request == ScanType.Error)
+            if(TwoScanRequest != nil)
             {
-                let alert = UIAlertView()
-                alert.title = "提示"
-                alert.message = TwoScanRequest.Errormsg
-                alert.addButtonWithTitle("确定")
-                alert.show()
-                self.dismissViewControllerAnimated(true, completion: nil)
+                if(TwoScanRequest!.request == ScanType.Error)
+                {
+                    let alert = UIAlertView()
+                    alert.title = "提示"
+                    alert.message = TwoScanRequest!.Errormsg
+                    alert.addButtonWithTitle("确定")
+                    alert.show()
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                else
+                {
+                    let alert = UIAlertView()
+                    alert.title = "提示"
+                    alert.message = "您已完结本活动！"
+                    alert.addButtonWithTitle("确定")
+                    alert.show()
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
             }
             else
             {
                 let alert = UIAlertView()
-                alert.title = "提示"
-                alert.message = "您已完结本活动！"
+                alert.title = "错误"
+                alert.message = "网络连接失败，请稍后重试"
                 alert.addButtonWithTitle("确定")
                 alert.show()
                 self.dismissViewControllerAnimated(true, completion: nil)
