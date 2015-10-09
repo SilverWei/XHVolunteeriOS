@@ -19,7 +19,19 @@ class ActivityDetailTableViewController: UITableViewController ,UIActionSheetDel
         super.viewDidLoad()
 
         ActivityDetail = GetActivityInfos(活动ID: indexId)
-        ActivityDetailShow()
+        if(ActivityDetail != nil)
+        {
+            ActivityDetailShow()
+        }
+        else
+        {
+            let alert = UIAlertView()
+            alert.title = "错误"
+            alert.message = "网络连接失败，请返回稍后重试"
+            alert.addButtonWithTitle("确定")
+            alert.show()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
