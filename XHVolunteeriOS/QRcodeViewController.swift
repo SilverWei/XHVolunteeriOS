@@ -51,11 +51,13 @@ class QRcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        videoPreviewLayer?.frame = QRView.layer.bounds
+        videoPreviewLayer?.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+        
         QRView.layer.addSublayer(videoPreviewLayer!)
         
         captureSession?.startRunning()
         
+        messageLabel.alpha = 0.5
         QRView.bringSubviewToFront(messageLabel)
         
         
